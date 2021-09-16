@@ -1,0 +1,28 @@
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flrps-icon {
+  height: 50px;
+  margin: 5px 20px;
+}
+
+.nav-right {
+  width: 300px;
+  padding: 20px 30px 20px 0 ;
+}
+
+.header-lists {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+.nav-btn {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  font-size: 20px;
+}

@@ -1,0 +1,33 @@
+.main-header {
+  height: 60px;
+  width: 100vw;
+  background-color: rgb(104, 174, 206);
+}
+
+.posts {
+  height: calc(100vh - 60px);
+  background-image: url("brick_1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.footer {
+  height: 40px;
+  width: 100vw;
+  background-color: lightgray;
+  color:white;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer p {
+  text-align: center;
+  line-height: 40px;
+  margin-right: 20px;
+}
+
+.flrps-icon-2 {
+  height: 20px;
+  margin: 10px;
+}
