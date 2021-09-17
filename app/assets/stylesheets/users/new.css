@@ -56,11 +56,17 @@
 .users-text {
   width: calc(100% - 200px - 30px);
   height: 40px;
+  border: 1px solid linen;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .profile {
   width: calc(100% - 200px - 30px);
   height: 120px;
+  border: 1px solid linen;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 .gender-man {
@@ -85,7 +91,7 @@
 }
 
 .e_form_btn {
-  background-color: navy;
+  background-color: red;
   color: white;
   font-weight: bold;
   border: none;
