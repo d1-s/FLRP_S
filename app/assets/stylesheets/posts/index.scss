@@ -1,14 +1,21 @@
+.main {
+  background-color: blanchedalmond;
+}
+
 .main-header {
   height: 60px;
   width: 100vw;
+  background-image: image-url("banner-1.jpg");
   background-color: rgb(104, 174, 206);
+  position: sticky;
+  top: 0;
 }
 
 .posts {
   height: calc(100vh - 60px);
-  background-image: url("brick_1.jpg");
-  background-attachment: fixed;
-  background-size: cover;
+  // background-image: image-url("brick_1.jpg");
+  // background-attachment: fixed;
+  // background-size: cover;
 }
 
 .footer {
