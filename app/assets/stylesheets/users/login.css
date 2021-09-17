@@ -10,6 +10,7 @@
 
 .login-form {
   padding: 20px 100px;
+  display: block;
 }
 
 .form-group-l {
