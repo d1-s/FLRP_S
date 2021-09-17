@@ -26,3 +26,16 @@
   margin-right: 20px;
   font-size: 20px;
 }
+
+.second-header {
+  background-color: lightgray;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.flrps-icon-3 {
+  height: 40px;
+}
