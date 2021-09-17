@@ -1,29 +1,72 @@
-<h2>Sign up</h2>
+<%= render "shared/second_header" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="field">
+  <div class="sign-up-page">
+    <div class="page-title">
+      <h1>新規登録</h1>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= form_with model: @user, url: user_registration_path, class: "user-form" do |f| %>
+      <%# <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="form-group">
+        <div class="label-name">
+          <%= f.label "ニックネーム" %><br />
+          <span class="required">必須</span>
+        </div>
+        <%= f.text_field :name, class: "users-text", autofocus: true, maxlength: 20 %>
+      </div>
+
+      <div class="form-group">
+        <div class="label-name">
+          <%= f.label "メールアドレス" %><br />
+          <span class="required">必須</span>
+        </div>
+        <%= f.email_field :email, class: "users-text", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="gender-field">
+        <div class="label-name">
+          <%= f.label "性別" %><br />
+          <span class="required">必須</span>
+        </div>
+        <div class="gender-man">
+          <%= f.label "男" %>
+          <%= f.radio_button :gender, :man %>
+        </div>
+        <div class="gender-womn">
+          <%= f.label "女" %>
+          <%= f.radio_button :gender, :woman %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="label-name">
+          <%= f.label "パスワード" %><br />
+          <span class="required">必須</span>
+        </div>
+        <%= f.password_field :password, class: "users-text", autocomplete: "off" %>
+      </div>
+
+      <div class="form-group">
+        <div class="label-name">
+          <%= f.label "パスワード（確認）" %><br />
+          <span class="required">必須</span>
+        </div>
+        <%= f.password_field :password_confirmation, class: "users-text", autocomplete: "off" %>
+      </div>
+
+      <div class="form-group">
+        <div class="label-name">
+          <%= f.label "自己紹介文" %>
+        </div>
+        <%= f.text_area :profile, class: "profile" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "アカウント登録", class: "u_form_btn" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
+<%= render "shared/footer" %>

@@ -30,8 +30,6 @@
 .second-header {
   background-color: lightgray;
   padding: 20px 0;
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: center;
 }
