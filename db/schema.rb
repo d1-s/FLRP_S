@@ -36,17 +36,17 @@ ActiveRecord::Schema.define(version: 2021_09_18_052301) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "visit", null: false
     t.string "restaurant", null: false
-    t.integer "category", null: false
+    t.integer "category_id", null: false
+    t.integer "private_id", null: false
+    t.integer "reserved_id", null: false
     t.time "open", null: false
     t.time "close", null: false
     t.string "address", null: false
-    t.integer "budget", null: false
+    t.integer "budget_id", null: false
     t.text "introduction"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "private", null: false
-    t.integer "reserved", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
