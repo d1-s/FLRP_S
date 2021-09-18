@@ -20,7 +20,9 @@
 
         <div class="p-form-group">
           <%= f.label "カテゴリー" %>
-          <%# <%= f.collection_select(:category, :id, :name, {}, {class:"select-box"}) %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+          <%= f.collection_select(:private_id, Private.all, :id, :name, {}, {class:"select-box"}) %>
+          <%= f.collection_select(:reserved_id, Reserved.all, :id, :name, {}, {class:"select-box"}) %>
         </div>
 
         <div class="p-form-group">
@@ -35,7 +37,7 @@
 
         <div class="p-form-group">
           <%= f.label "予算" %>
-          <%# <%= f.collection_select(:budget, :id, :name, {}, {class:"select-box"}) %>
+          <%= f.collection_select(:budget_id, Budget.all, :id, :name, {}, {class:"select-box"}) %>
         </div>
 
         <div class="p-form-group">

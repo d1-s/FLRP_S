@@ -1,4 +1,4 @@
-class Budget < ActiveHash::Base
+class Private < ActiveHash::Base
   self.data = [
     { id: 1, name: '個室なし' },
     { id: 2, name: '個室あり' }

@@ -1,4 +1,4 @@
-class Budget < ActiveHash::Base
+class Reserved < ActiveHash::Base
   self.data = [
     { id: 1, name: '貸切 不可' },
     { id: 2, name: '貸切 可' }
