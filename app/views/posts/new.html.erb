@@ -1,0 +1,52 @@
+<div class="overall">
+  <%= render "shared/header" %>
+  
+  <div class="post-content-main">
+    <div class="post-content">
+      <h1 class="post-content-title">新規投稿</h1>
+
+      <%= form_with model: @post, url: posts_path, local: true do |f| %>
+        <%# <%= render 'shared/error_messages', model: f.object %>
+
+        <div class="p-form-group">
+          <%= f.label "来店日" %>
+          <%= f.date_field :visit, autofocus: true %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "店名" %>
+          <%= f.text_area :restaurant %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "カテゴリー" %>
+          <%# <%= f.collection_select(:category, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "営業時間" %>
+          <%= f.time_select :open %> 〜 <%= f.time_select :close %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "住所" %>
+          <%= f.text_area :address %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "予算" %>
+          <%# <%= f.collection_select(:budget, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "おすすめポイント／感想" %>
+          <%= f.text_area :introduction %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+</div>
