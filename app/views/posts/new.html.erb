@@ -41,6 +41,11 @@
         </div>
 
         <div class="p-form-group">
+          <%= f.label "画像（外観／料理）" %>
+          <%= f.file_field :image %>
+        </div>
+
+        <div class="p-form-group">
           <%= f.label "おすすめポイント／感想" %>
           <%= f.text_area :introduction %>
         </div>
