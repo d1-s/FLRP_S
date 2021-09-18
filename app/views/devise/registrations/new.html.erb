@@ -10,24 +10,24 @@
       <%# <%= render 'shared/error_messages', model: f.object %>
 
       <div class="form-group">
-        <div class="label-name">
-          <%= f.label "ニックネーム" %><br />
+        <div class="label-part">
+          <%= f.label "■ ニックネーム", class: "label-name" %><br />
           <span class="required">必須</span>
         </div>
         <%= f.text_field :name, class: "users-text", autofocus: true, maxlength: 20 %>
       </div>
 
       <div class="form-group">
-        <div class="label-name">
-          <%= f.label "メールアドレス" %><br />
+        <div class="label-part">
+          <%= f.label "■ メールアドレス", class: "label-name" %><br />
           <span class="required">必須</span>
         </div>
         <%= f.email_field :email, class: "users-text", autofocus: true, autocomplete: "email" %>
       </div>
 
       <div class="gender-field">
-        <div class="label-name">
-          <%= f.label "性別" %><br />
+        <div class="label-part">
+          <%= f.label "■ 性別", class: "label-name" %><br />
           <span class="required">必須</span>
         </div>
         <div class="gender-man">
@@ -41,25 +41,23 @@
       </div>
 
       <div class="form-group">
-        <div class="label-name">
-          <%= f.label "パスワード" %><br />
+        <div class="label-part">
+          <%= f.label "■パスワード", class: "label-name" %><br />
           <span class="required">必須</span>
         </div>
         <%= f.password_field :password, class: "users-text", autocomplete: "off" %>
       </div>
 
       <div class="form-group">
-        <div class="label-name">
-          <%= f.label "パスワード（確認）" %><br />
+        <div class="label-part">
+          <%= f.label "■ パスワード（確認）", class: "label-name" %><br />
           <span class="required">必須</span>
         </div>
         <%= f.password_field :password_confirmation, class: "users-text", autocomplete: "off" %>
       </div>
 
       <div class="form-group">
-        <div class="label-name">
-          <%= f.label "自己紹介文" %>
-        </div>
+        <%= f.label "■ 自己紹介文", class: "profile-label" %>
         <%= f.text_area :profile, class: "profile" %>
       </div>
 
