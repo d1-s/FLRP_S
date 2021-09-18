@@ -27,7 +27,7 @@
 
         <div class="p-form-group">
           <%= f.label "営業時間" %>
-          <%= f.time_select :open %> 〜 <%= f.time_select :close %>
+          <%= f.time_select :open, prompt: "--" %> 〜 <%= f.time_select :close, prompt: "--" %>
         </div>
 
         <div class="p-form-group">
