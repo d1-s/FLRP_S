@@ -36,11 +36,23 @@
   display: flex;
 }
 
-.label-name {
-  width: 200px;
+.label-part {
+  width: 220px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.label-name {
+  text-decoration: underline;
+}
+
+.profile-label {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+  text-decoration: underline;
 }
 
 .required {

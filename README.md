@@ -24,6 +24,8 @@
 | visit         | date       | null: false                    |
 | restaurant    | string     | null: false                    |
 | category      | integer    | null: false                    |
+| private       | integer    | null: false                    |
+| reserved      | integer    | null: false                    |
 | open          | time       | null: false                    |
 | close         | time       | null: false                    |
 | address       | string     | null: false                    |

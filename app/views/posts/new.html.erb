@@ -1,0 +1,63 @@
+<div class="overall">
+  <%= render "shared/header" %>
+  
+  <div class="post-content-main">
+    <div class="post-content">
+      <h1 class="post-content-title">新規投稿</h1>
+
+      <%= form_with model: @post, url: posts_path, local: true do |f| %>
+        <%# <%= render 'shared/error_messages', model: f.object %>
+
+        <div class="p-form-group">
+          <%= f.label "来店日" %>
+          <%= f.date_field :visit, autofocus: true %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "店名" %>
+          <%= f.text_area :restaurant %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "カテゴリー" %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
+          <%= f.collection_select(:private_id, Private.all, :id, :name, {}, {class:"select-box"}) %>
+          <%= f.collection_select(:reserved_id, Reserved.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "営業時間" %>
+          <%= f.time_select :open, prompt: "--" %> 〜 <%= f.time_select :close, prompt: "--" %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "住所" %>
+          <%= f.text_area :address %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "予算" %>
+          <%= f.collection_select(:budget_id, Budget.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "画像（外観／料理）" %>
+          <%= f.file_field :image %>
+        </div>
+
+        <div class="p-form-group">
+          <%= f.label "おすすめポイント／感想" %>
+          <%= f.text_area :introduction %>
+        </div>
+
+        <div class="post-actions">
+          <%= f.submit "投稿する", class: "p_form_btn" %>
+        </div>
+
+      <% end %>
+
+    </div>
+  </div>
+
+  <%= render "shared/footer" %>
+</div>
