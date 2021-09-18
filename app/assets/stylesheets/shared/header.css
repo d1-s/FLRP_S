@@ -5,8 +5,8 @@
 }
 
 .flrps-icon {
-  height: 50px;
-  margin: 5px 20px;
+  height: 40px;
+  margin: 10px 20px;
 }
 
 .nav-right {
@@ -25,4 +25,23 @@
   color: white;
   margin-right: 20px;
   font-size: 20px;
+}
+
+.new-post {
+  text-decoration: none;
+  color: white;
+  margin-right: 20px;
+  font-size: 20px;
+}
+
+.second-header {
+  height: 160px;
+  background-color: lightgray;
+  padding: 30px 0 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.flrps-icon-3 {
+  height: 80px;
 }

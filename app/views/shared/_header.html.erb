@@ -3,10 +3,13 @@
     <%= link_to image_tag("FLRP_S.png", class: "flrps-icon"), "/" %>
     <div class="nav-right">
       <ul class='header-lists'>
-        <%# <li><%= link_to 'ログアウト', "#", class: "nav-btn"</li> %>
-        <%# <li><%= link_to '新規投稿', "#", class: "new-post"</li> %>
-        <li><%= link_to 'ログイン', "#", class: "nav-btn" %></li>
-        <li><%= link_to '新規登録', "#", class: "nav-btn" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "nav-btn" %></li>
+          <li><%= link_to '新規投稿', "#", class: "new-post" %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path, class: "nav-btn" %></li>
+          <li><%= link_to '新規登録', new_user_registration_path, class: "nav-btn" %></li>
+        <% end %>
       </ul>
     </div>
   </div>

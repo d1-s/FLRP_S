@@ -1,0 +1,34 @@
+<%= render "shared/second_header" %>
+
+<div class="field">
+  <div class="sign-in-page">
+    <div class="page-title">
+      <h1>ログイン</h1>
+    </div>
+
+    <%= form_with model: @user, url: user_session_path, class: "login-form", local: true do |f| %>
+      <%# <%= render 'shared/error_messages', model: f.object %>
+
+      <div class="form-group-l">
+        <div class="label-name-l">
+          <%= f.label "メールアドレス" %><br />
+          <span class="required">必須</span>
+        </div>
+        <%= f.email_field :email, class: "login-text", autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="form-group-l">
+        <div class="label-name-l">
+          <%= f.label "パスワード" %><br />
+          <span class="required">必須</span>
+        </div>
+        <%= f.password_field :password, class: "login-text", autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "ログイン", class: "i_form_btn" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<%= render "shared/footer" %>
