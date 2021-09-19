@@ -1,3 +1,10 @@
+.main-header {
+  height: 60px;
+  width: 100vw;
+  background-color: rgba(237,234,237,1);
+  position: sticky;
+  top: 0;
+}
 
 .nav {
   display: flex;
@@ -22,14 +29,14 @@
 
 .nav-btn {
   text-decoration: none;
-  color: white;
+  color: black;
   margin-right: 20px;
   font-size: 20px;
 }
 
 .new-post {
   text-decoration: none;
-  color: white;
+  color: black;
   margin-right: 20px;
   font-size: 20px;
 }
@@ -44,4 +51,25 @@
 
 .flrps-icon-3 {
   height: 80px;
+}
+
+.footer {
+  height: 40px;
+  width: 100vw;
+  background-image: image-url("banner-1.jpg");
+  color:white;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer p {
+  text-align: center;
+  line-height: 40px;
+  margin-right: 20px;
+}
+
+.flrps-icon-2 {
+  height: 20px;
+  margin: 10px;
 }
