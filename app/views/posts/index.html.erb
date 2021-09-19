@@ -1,12 +1,26 @@
+<%= render "shared/header" %>
+
 <div class="overall">
-  <%= render "shared/header" %>
-  
-  <div class="main">
+
+  <div class="index-page">
     <%# <%= render "shared/left_side" %>
-    <div class="posts">
-    </div>
+    <ul class="posts">
+
+      <li class="post-list">
+        <% @posts.each do |post| %>
+        
+          <%= link_to image_tag(post.image.variant(resize: '500x500')), "#" %>
+          <p>来店日     <%= post.visit %></p>
+          <p> <%= post.restaurant %></p>
+          <p>カテゴリー <%= post.category.name %></p>
+          <p>予算      <%= post.budget.name %></p>
+          <p>投稿者 <%= post.user.name %></p>
+        
+        <% end %>
+      </li>
+    </ul>
     <%# <%= render "shared/right_side" %>
   </div>
 
-  <%= render "shared/footer" %>
+<%= render "shared/footer" %>
 </div>

@@ -1,41 +1,24 @@
 .overall {
-  background-color: lightgray;
+  background-image: image-url("brick_1.jpg");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
-.main-header {
-  height: 60px;
-  width: 100vw;
-  background-image: image-url("banner-1.jpg");
-  position: sticky;
-  top: 0;
-}
-
-.main {
-  height: calc(100vh - 60px);
-  display: flex;
-  // justify-content: space-between;
-  // background-image: image-url("brick_1.jpg");
-  // background-attachment: fixed;
-  // background-size: cover;
-}
-
-.footer {
-  height: 40px;
-  width: 100vw;
-  background-image: image-url("banner-1.jpg");
-  color:white;
-  font-size: 14px;
+.index-page {
   display: flex;
   justify-content: center;
+  padding: 20px 0;
 }
 
-.footer p {
-  text-align: center;
-  line-height: 40px;
-  margin-right: 20px;
+.posts {
+  // margin: auto;
 }
 
-.flrps-icon-2 {
-  height: 20px;
-  margin: 10px;
+.post-list {
+  width: 50vw;
+  background-color: rgba(255,255,255,0.5);
+  height: auto;
+  border: 1px solid darkgray;
+  border-radius: 10px;
+  padding: 20px;
 }
