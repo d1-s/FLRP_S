@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_09_18_052301) do
     t.date "visit", null: false
     t.string "restaurant", null: false
     t.integer "category_id", null: false
-    t.integer "private_id", null: false
+    t.integer "compartment_id", null: false
     t.integer "reserved_id", null: false
     t.time "open", null: false
     t.time "close", null: false

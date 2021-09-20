@@ -1,21 +1,14 @@
-.overall {
-  background-image: image-url("brick_1.jpg");
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-.index-page {
+.post-show-page {
   display: flex;
   justify-content: center;
   padding: 20px 0;
 }
 
-.posts {
+.post-show-contents {
   display: block;
-  margin: 20px 0;
 }
 
-.post-list {
+.post-show {
   width: 50vw;
   background-color: rgba(255,255,255,0.5);
   height: auto;

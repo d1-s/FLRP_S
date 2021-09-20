@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show]
 
   def index
     @posts = Post.includes(:user)
@@ -17,11 +18,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:visit, :restaurant, :category_id, :private_id, :reserved_id, :open, :close,
+    params.require(:post).permit(:visit, :restaurant, :category_id, :compartment_id, :reserved_id, :open, :close,
                                  :address, :budget_id, :image, :introduction).merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
   
 end
