@@ -28,6 +28,22 @@
         <p>予算<%= @post.budget.name %></p>
         <p>おすすめポイント／感想<%= @post.introduction %></p>
         <p>投稿者<%= @post.user.name %></p>
+
+        <div class="comment-field">
+          <%= form_with model: [@post, @comment], local: true do |f| %>
+            <%= f.text_area :text %>
+            <%= f.submit "コメントする" %>
+          <% end %>
+          <div class="comments">
+            <% @comments.each do |comment| %>
+              <p>
+                <%= comment.text %>
+                <span><%= comment.user.name %></span>
+              </p>
+            <% end %>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
