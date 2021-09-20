@@ -14,7 +14,7 @@
           <p> <%= post.restaurant %></p>
           <p>カテゴリー <%= post.category.name %></p>
           <p>予算      <%= post.budget.name %></p>
-          <p>投稿者 <%= post.user.name %></p>
+          <p>投稿者 <%= link_to post.user.name, user_path(post.user.id) %></p>
         
         <% end %>
       </li>
