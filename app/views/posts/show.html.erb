@@ -10,8 +10,8 @@
       <div class="post-show">
         <h1><%= image_tag @post.image.variant(resize: '500x500') %></h1>
         <% if user_signed_in? && current_user.id %>
-          <%= link_to "編集", "#" %>
-          <%= link_to "削除", "#" %>
+          <%= link_to "編集", edit_post_path(@post.id) %>
+          <%= link_to "削除", post_path(@post.id), method: :delete %>
         <% end %>
         <p>来店日<%= @post.visit %></p>
         <p>店名<%= @post.restaurant %></p>
