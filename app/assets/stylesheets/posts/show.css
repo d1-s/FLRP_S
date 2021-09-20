@@ -4,6 +4,10 @@
   padding: 20px 0;
 }
 
+.post-show-contents {
+  display: block;
+}
+
 .post-show {
   width: 50vw;
   background-color: rgba(255,255,255,0.5);
