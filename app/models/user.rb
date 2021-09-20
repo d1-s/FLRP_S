@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  has_many :comments
 
   enum sex: { man: 0, woman: 1}
   with_options presence: true do
