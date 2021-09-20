@@ -4,7 +4,7 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.date :visit,            null: false
       t.string :restaurant,     null: false
       t.integer :category_id,   null: false
-      t.integer :private_id,    null: false
+      t.integer :compartment_id,    null: false
       t.integer :reserved_id,   null: false
       t.time :open,             null: false
       t.time :close,            null: false
