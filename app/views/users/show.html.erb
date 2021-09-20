@@ -3,7 +3,7 @@
 <div class="overall">
 
   <div class="index-page">
-    <%# <%= render "shared/left_side" %>
+    <h1><%= @user.name %> さんの投稿一覧</h1>
     <ul class="posts">
 
       <li class="post-list">
@@ -14,12 +14,11 @@
           <p> <%= post.restaurant %></p>
           <p>カテゴリー <%= post.category.name %></p>
           <p>予算      <%= post.budget.name %></p>
-          <p>投稿者 <%= link_to post.user.name, user_path(post.user.id) %></p>
+          <p>投稿者 <%= post.user.name %></p>
         
         <% end %>
       </li>
     </ul>
-    <%# <%= render "shared/right_side" %>
   </div>
 
 <%= render "shared/footer" %>
