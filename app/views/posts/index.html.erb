@@ -1,12 +1,15 @@
+<div class="overall">
 <%= render "shared/header" %>
 
-<div class="overall">
-
   <div class="index-page">
-    <%# <%= render "shared/left_side" %>
-    <ul class="posts">
+    <div class="search-box">
+      <%= render 'search', q: @q, url: posts_path %>
+    </div>
 
-      <li class="post-list">
+    <%# <div id="search-list">
+    </div> %>
+    <div class="posts">
+      <div class="post-list">
         <% @posts.each do |post| %>
         
           <%= link_to image_tag(post.image.variant(resize: '500x500')), post_path(post.id) %>
@@ -17,9 +20,9 @@
           <p>投稿者 <%= link_to post.user.name, user_path(post.user.id) %></p>
         
         <% end %>
-      </li>
-    </ul>
-    <%# <%= render "shared/right_side" %>
+      </div>
+    </div>
+
   </div>
 
 <%= render "shared/footer" %>
