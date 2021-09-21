@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :search_post, only: [:index, :seach]
 
   def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes(:user).order("created_at DESC")
+    @posts = Post.includes(:user).order("created_at DESC")
   end
 
   def new
@@ -40,6 +40,11 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    # binding.pry
+    @results = @q.result(distinct: true)
+  end
+
   private
 
   def post_params
@@ -49,6 +54,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def search_post
+    @q = Post.ransack(params[:q])
   end
   
 end

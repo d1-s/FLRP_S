@@ -10,4 +10,12 @@ class Post < ApplicationRecord
   belongs_to :compartment
   belongs_to :reserved
 
+  def self.ransackable_attributes(*)
+    %w[category_id compartment_id reserved_id budget_id]
+  end
+
+  def self.ransackable_associations(*)
+    %w[user]
+  end
+
 end
