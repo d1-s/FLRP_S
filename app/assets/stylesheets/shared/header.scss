@@ -6,7 +6,12 @@
 
 .nav {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+}
+
+.nav-left {
+  width: 33vw;
 }
 
 .flrps-icon {
@@ -14,8 +19,27 @@
   margin: 10px 20px;
 }
 
+.nav-center {
+  height: 40px;
+  line-height: 30px;
+  width: auto;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 30px;
+  margin: 5px 0 15px 0;
+  color: white;
+  font-size: 14px;
+}
+
+.nav-name {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
 .nav-right {
-  width: 300px;
+  width: 33vw;
   padding: 20px 30px 20px 0 ;
 }
 

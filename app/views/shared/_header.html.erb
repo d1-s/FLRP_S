@@ -1,6 +1,15 @@
 <header class="main-header">
   <div class="nav">
-    <%= link_to image_tag("FLRP_S.png", class: "flrps-icon"), "/" %>
+    <div class="nav-left">
+      <%= link_to image_tag("FLRP_S.png", class: "flrps-icon"), "/" %>
+    </div>
+    <div class="nav-center">
+      <% if user_signed_in? %>
+        <p>
+          <%= link_to current_user.name, user_path(current_user.id), class: "nav-name" %> さん ログイン中
+        </p>
+      <% end %>
+    </div>
     <div class="nav-right">
       <ul class='header-lists'>
         <% if user_signed_in? %>
