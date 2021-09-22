@@ -3,8 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.ransack(params[:q])
-    # binding.pry
-    @posts = @q.result(distinct: true).includes(:user).order('created_at DESC')
+    @posts = @q.result(distinct: true).includes(:user).order('created_at DESC').page(params[:page]).per(5)
   end
 
   def new
