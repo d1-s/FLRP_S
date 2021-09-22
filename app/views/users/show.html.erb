@@ -4,21 +4,13 @@
 
   <div class="index-page">
     <h1><%= @user.name %> さんの投稿一覧</h1>
-    <ul class="posts">
 
-      <li class="post-list">
-        <% @posts.each do |post| %>
-        
-          <%= link_to image_tag(post.image.variant(resize: '500x500')), post_path(post.id) %>
-          <p>来店日     <%= post.visit %></p>
-          <p> <%= post.restaurant %></p>
-          <p>カテゴリー <%= post.category.name %></p>
-          <p>予算      <%= post.budget.name %></p>
-          <p>投稿者 <%= post.user.name %></p>
-        
-        <% end %>
-      </li>
-    </ul>
+    <div class="posts">
+      <% @posts.each do |post| %>
+        <%= render partial: "posts/posts", locals: { post: post } %>
+      <% end %>
+    </div>
+
   </div>
 
 <%= render "shared/footer" %>
