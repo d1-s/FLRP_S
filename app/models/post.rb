@@ -15,7 +15,7 @@ class Post < ApplicationRecord
   end
 
   def self.ransackable_associations(*)
-    %w[user]
+    %w[user category compartment reserved budget image]
   end
 
 end
