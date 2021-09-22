@@ -8,11 +8,7 @@
   display: flex;
   align-items: center;
   flex-direction:column;
-  padding: 20px 0;
-}
-
-.search {
-  padding-bottom: 20px;
+  margin: 20px 0;
 }
 
 .posts {
@@ -31,6 +27,54 @@
   margin-bottom: 10px;
 }
 
-#search-btn {
+.search {
+  height: 50px;
+  width: 70vw;
+  border-bottom: 2px solid silver;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-label {
+  height: 30px;
+  padding: 8px 10px;
+  border: none;
+  margin-left: 10px;
+  background-color: rgba(0,0,205,0.5);
+  color: white;
+}
+
+.search-content {
+  height: 30px;
+  padding: auto;
+  border-radius: 0px;
+}
+
+.search-btn {
+  padding: 2px 10px;
   background-color: skyblue;
+  margin-left: 10px;
+}
+
+.not-content-message {
+  width: 40vw;
+  height: 100px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 100px;
+  background-color: rgba(255,255,255,0.5);
+  font-size: 24px;
+}
+
+.back-btn {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  padding-top: 10px;
+  border-bottom: 1px solid white;
 }
