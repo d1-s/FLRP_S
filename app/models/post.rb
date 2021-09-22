@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-
   belongs_to :user
   has_one_attached :image
   has_many :comments
@@ -17,5 +16,4 @@ class Post < ApplicationRecord
   def self.ransackable_associations(*)
     %w[user category compartment reserved budget image]
   end
-
 end

@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   def index
     @q = Post.ransack(params[:q])
     # binding.pry
-    @posts = @q.result(distinct: true).includes(:user).order("created_at DESC")
+    @posts = @q.result(distinct: true).includes(:user).order('created_at DESC')
   end
 
   def new
@@ -55,5 +55,4 @@ class PostsController < ApplicationController
   def set_post
     @post = Post.find(params[:id])
   end
-
 end
