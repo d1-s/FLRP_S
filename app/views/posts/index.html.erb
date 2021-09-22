@@ -1,25 +1,25 @@
+<div class="overall">
 <%= render "shared/header" %>
 
-<div class="overall">
-
   <div class="index-page">
-    <%# <%= render "shared/left_side" %>
-    <ul class="posts">
+    <div class="search">
+      <%= search_form_for @q, id: "search-form" do |f| %>
+        <%= f.label :category_id_eq, "絞り込み" %>
+        <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {prompt: 'シチュエーション'}, {id:"search-content"}) %>
+        <%= f.label "個室／貸切" %>
+        <%= f.collection_select(:compartment_id_eq, Compartment.all, :id, :name, {prompt: '指定なし'}, {id:"search-content"}) %>
+        <%= f.collection_select(:reserved_id_eq, Reserved.all, :id, :name, {prompt: '指定なし'}, {id:"search-content"}) %>
+        <%= f.collection_select(:budget_id_eq, Budget.all, :id, :name, {prompt: '予算'}, {id:"search-content"}) %>
+        <%= f.submit "検索", id: "search-btn" %>
+      <% end %>
+    </div>
 
-      <li class="post-list">
-        <% @posts.each do |post| %>
-        
-          <%= link_to image_tag(post.image.variant(resize: '500x500')), post_path(post.id) %>
-          <p>来店日     <%= post.visit %></p>
-          <p> <%= post.restaurant %></p>
-          <p>カテゴリー <%= post.category.name %></p>
-          <p>予算      <%= post.budget.name %></p>
-          <p>投稿者 <%= link_to post.user.name, user_path(post.user.id) %></p>
-        
-        <% end %>
-      </li>
-    </ul>
-    <%# <%= render "shared/right_side" %>
+    <div class="posts">
+      <% @posts.each do |post| %>
+        <%= render partial: "posts", locals: { post: post } %>
+      <% end %>
+    </div>
+
   </div>
 
 <%= render "shared/footer" %>

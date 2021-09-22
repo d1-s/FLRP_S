@@ -1,0 +1,30 @@
+<div class="overall">
+<%= render "shared/header" %>
+
+  <div class="index-page">
+    <div class="search">
+      <%= search_form_for @q, url: search_posts_path, id: "search-form" do |f| %>
+        <%= f.label :category_id_eq, "絞り込み" %>
+        <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {prompt: '指定なし'}, {id:"search-content"})%>
+        <%= f.submit "検索", id: "search-btn" %>
+      <% end %>
+    </div>
+
+    <% if @results.length != 0 %>
+      <p><%= "#{@q.category_id_eq} の検索結果" %></p>
+      <div class="posts">
+        <% @results.each do |post| %>
+          <%= render partial: "posts", locals: { post: post } %>
+        <% end %>
+      </div>
+
+    <% else %>
+
+      <p>該当する投稿はありません。</p>
+
+    <% end %>
+
+  </div>
+
+<%= render "shared/footer" %>
+</div>
