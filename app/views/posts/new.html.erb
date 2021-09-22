@@ -21,7 +21,7 @@
 
         <div class="p-form-group">
           <%= f.label "カテゴリー" %>
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {prompt: '---'}, {class:"select-box"}) %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: '---'}, {class:"select-box"}) %>
           <%= f.collection_select(:compartment_id, Compartment.all, :id, :name, {}, {class:"select-box"}) %>
           <%= f.collection_select(:reserved_id, Reserved.all, :id, :name, {}, {class:"select-box"}) %>
         </div>
