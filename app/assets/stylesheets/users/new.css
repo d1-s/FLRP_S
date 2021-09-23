@@ -1,15 +1,9 @@
-.field {
-  background-color: lightgray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .sign-up-page {
   width: 50vw;
   text-align: center;
   height: 100%;
-  background-color: white;
+  background-color: rgba(255,255,255,0.7);
   border-radius: 30px;
   margin-bottom: 50px;
   padding: 20px;
@@ -19,9 +13,9 @@
   font-size: 30px;
   font-family: 'Noto Sans JP', sans-serif;
   padding-bottom: 20px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid black;
 }
-
+/* 入力フォーム */
 .user-form {
   padding-top: 20px;
 }
@@ -68,7 +62,8 @@
 .users-text {
   width: calc(100% - 200px - 30px);
   height: 40px;
-  border: 1px solid linen;
+  padding: 2px 10px;
+  border: 1px solid silver;
   border-radius: 4px;
   font-size: 16px;
 }
@@ -76,7 +71,8 @@
 .profile {
   width: calc(100% - 200px - 30px);
   height: 120px;
-  border: 1px solid linen;
+  padding: 5px 10px;
+  border: 1px solid silver;
   border-radius: 4px;
   font-size: 16px;
 }
@@ -93,12 +89,14 @@
   margin: 20px 0 20px;
 }
 
+/* アカウント登録ボタン */
 .u_form_btn {
+  width: 80%;
   background-color: navy;
   color: white;
   font-weight: bold;
   border: none;
-  padding: 10px 20px;
+  padding: 10px;
   border-radius: 10px;
 }
 
