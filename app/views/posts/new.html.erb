@@ -1,52 +1,63 @@
 <div class="overall">
   <%= render "shared/header" %>
   
-  <div class="post-content-main">
-    <div class="post-content">
-      <h1 class="post-content-title">新規投稿</h1>
+  <div class="main">
+    <div class="post-page">
+      <div class="post-page-title">
+        新規投稿
+      </div>
 
-      <%= form_with model: @post, url: posts_path, local: true do |f| %>
+      <%= form_with model: @post, url: posts_path, class: "post-form", local: true do |f| %>
         <%# <%= render 'shared/error_messages', model: f.object %>
 
         <div class="p-form-group">
-          <%= f.label "来店日" %>
-          <%= f.date_field :visit, autofocus: true %>
+          <div class="form-left">
+            <%= f.label "■ 来店日", class: "p-label" %>
+            <span class="mark">必須</span>
+          </div>
+          <%= f.date_field :visit, class: "post-text", autofocus: true %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "店名" %>
-          <%= f.text_area :restaurant %>
+          <div class="form-left">
+            <%= f.label "■ 店名", class: "p-label" %>
+            <span class="mark">必須</span>
+          </div>
+            <%= f.text_area :restaurant, class: "post-text" %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "カテゴリー" %>
+          <%= f.label "■ シチュエーション", class: "p-label" %>
           <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: '---'}, {class:"select-box"}) %>
           <%= f.collection_select(:compartment_id, Compartment.all, :id, :name, {}, {class:"select-box"}) %>
           <%= f.collection_select(:reserved_id, Reserved.all, :id, :name, {}, {class:"select-box"}) %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "営業時間" %>
+          <%= f.label "■ 営業時間", class: "p-label" %>
           <%= f.time_select :open, prompt: "--" %> 〜 <%= f.time_select :close, prompt: "--" %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "住所" %>
+          <%= f.label "■ 住所", class: "p-label" %>
+          <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: '---'}, {class:"select-box"}) %>
+          <%= f.text_area :city %>
           <%= f.text_area :address %>
+          <%= f.text_area :buiding %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "予算" %>
+          <%= f.label "■ 予算", class: "p-label" %>
           <%= f.collection_select(:budget_id, Budget.all, :id, :name, {prompt: '---'}, {class:"select-box"}) %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "画像（外観／料理）" %>
+          <%= f.label "■ 画像（外観／料理）", class: "p-label" %>
           <%= f.file_field :image %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "おすすめポイント／感想" %>
+          <%= f.label "■ おすすめポイント／感想", class: "p-label" %>
           <%= f.text_area :introduction %>
         </div>
 
