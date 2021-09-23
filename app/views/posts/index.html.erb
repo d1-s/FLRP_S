@@ -3,22 +3,42 @@
 
   <div class="index-page">
     <div class="search">
-      <%= search_form_for @q, id: "search-form" do |f| %>
-        <%= f.label :category_id_eq, "絞り込み" %>
-        <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {prompt: 'シチュエーション'}, {id:"search-content"}) %>
-        <%= f.label "個室／貸切" %>
-        <%= f.collection_select(:compartment_id_eq, Compartment.all, :id, :name, {prompt: '指定なし'}, {id:"search-content"}) %>
-        <%= f.collection_select(:reserved_id_eq, Reserved.all, :id, :name, {prompt: '指定なし'}, {id:"search-content"}) %>
-        <%= f.collection_select(:budget_id_eq, Budget.all, :id, :name, {prompt: '予算'}, {id:"search-content"}) %>
-        <%= f.submit "検索", id: "search-btn" %>
+      <%= search_form_for @q, class: "search-form" do |f| %>
+        <div class="search-nav">
+          <p class="search-nav-left">絞り込み</p>
+          <div class="search-nav-right">
+            <div>
+              <%= f.label "シチュエーション", class: "search-label" %>
+              <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
+            </div>
+            <div>
+              <%= f.label "個室／貸切", class: "search-label" %>
+              <%= f.collection_select(:compartment_id_eq, Compartment.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
+              <%= f.collection_select(:reserved_id_eq, Reserved.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
+              <%= f.label "予算", class: "search-label" %>
+              <%= f.collection_select(:budget_id_eq, Budget.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
+            </div>
+          </div>
+          <%= f.submit "検索", class: "search-btn" %>
+        </div>
       <% end %>
     </div>
 
-    <div class="posts">
-      <% @posts.each do |post| %>
-        <%= render partial: "posts", locals: { post: post } %>
-      <% end %>
-    </div>
+    <% if @posts.any? %>
+      <div class="posts">
+        <% @posts.each do |post| %>
+          <%= render partial: "posts", locals: { post: post } %>
+        <% end %>
+      </div>
+    <% else %>
+      <p class="not-content-message">該当する投稿はありません</p>
+    <% end %>
+
+    <%= paginate @posts, :window => 2 %>
+
+    <%= link_to  root_path do %>
+      <button class="back-btn">トップに戻る</button>
+    <% end %>
 
   </div>
 

@@ -6,7 +6,7 @@
     <div class="nav-center">
       <% if user_signed_in? %>
         <p>
-          <%= link_to current_user.name, user_path(current_user.id), class: "nav-name" %> さん ログイン中
+          <%= link_to current_user.name, user_path(current_user.id), class: "nav-name" %>
         </p>
       <% end %>
     </div>
