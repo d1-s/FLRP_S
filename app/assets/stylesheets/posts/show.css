@@ -1,11 +1,15 @@
-.post-show-page {
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-}
 
 .post-show-contents {
-  display: block;
+  width: auto;
+  padding: 10px 50px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: rgba(255,255,255,0.5);
+  text-align: center;
+}
+
+.show-user-name {
+  color: #303030;
 }
 
 .post-show {
@@ -15,4 +19,57 @@
   border: 1px solid darkgray;
   border-radius: 10px;
   padding: 20px;
+  margin-bottom: 20px;
+}
+
+.show-image {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.show-info {
+  font-size: 16px;
+  color: black;
+  margin: 10px 0;
+  padding: 10px 15px 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(135,206,235,0.5);
+}
+
+.show-list-upper {
+  list-style: none;
+}
+
+.show-list-lower {
+  display: flex;
+}
+
+.show-list-content {
+  margin-top: 10px;
+}
+
+.show-list-user-icon {
+  margin-left: 40px;
+}
+
+.show-list-user-name {
+  background-color: rgba(128,128,128,0.5);
+  padding: 2px 10px;
+  margin-left: 5px;
+  border-radius: 10px;
+  color: navy;
+}
+
+.post-intro {
+  display: flex;
+  flex-direction: column;
+}
+
+.introduction {
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px double black;
+  background-color: white;
+  border-radius: 5px;
 }
