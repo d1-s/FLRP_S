@@ -58,6 +58,13 @@
   background-color: white;
 }
 
+.post-date {
+  height: 4vh;
+  padding: 2px 10px;
+  border: 1px solid silver;
+  background-color: white;
+}
+
 .select-box-2 {
   width: 20%;
   height: 4vh;

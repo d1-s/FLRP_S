@@ -2,45 +2,26 @@
   <%= render "shared/header" %>
 
   <div class="main">
-    <div class="search">
-      <%= search_form_for @q, class: "search-form" do |f| %>
-        <div class="search-nav">
-          <p class="search-nav-left">絞り込み</p>
-          <div class="search-nav-right">
-            <div>
-              <%= f.label "シチュエーション", class: "search-label" %>
-              <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
-              <%= f.label "場所", class: "search-label" %>
-              <%= f.collection_select(:prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
-            </div>
-            <div>
-              <%= f.label "個室／貸切", class: "search-label" %>
-              <%= f.collection_select(:compartment_id_eq, Compartment.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
-              <%= f.collection_select(:reserved_id_eq, Reserved.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
-              <%= f.label "予算", class: "search-label" %>
-              <%= f.collection_select(:budget_id_eq, Budget.all, :id, :name, {include_blank: '指定なし'}, {class:"search-content"}) %>
-            </div>
-          </div>
-          <%= f.submit "検索", class: "search-btn" %>
+
+    <%= render "search_form" %>
+
+    <div class="main-contents">
+      <% if @posts.any? %>
+        <div class="posts">
+          <% @posts.each do |post| %>
+            <%= render partial: "posts/posts", locals: { post: post } %>
+          <% end %>
         </div>
+      <% else %>
+        <p class="not-content-message">該当する投稿はありません</p>
+      <% end %>
+
+      <%= paginate @posts, :window => 2 %>
+
+      <%= link_to  root_path do %>
+        <button class="back-btn">トップに戻る <i class="fas fa-undo-alt"></i></button>
       <% end %>
     </div>
-
-    <% if @posts.any? %>
-      <div class="posts">
-        <% @posts.each do |post| %>
-          <%= render partial: "posts/posts", locals: { post: post } %>
-        <% end %>
-      </div>
-    <% else %>
-      <p class="not-content-message">該当する投稿はありません</p>
-    <% end %>
-
-    <%= paginate @posts, :window => 2 %>
-
-    <%= link_to  root_path do %>
-      <button class="back-btn">トップに戻る <i class="fas fa-undo-alt"></i></button>
-    <% end %>
 
   </div>
 

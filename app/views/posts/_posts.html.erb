@@ -1,19 +1,19 @@
 <div class="post-list">
-  <%= link_to image_tag(post.image, class: "list-image"), post_path(post.id) %>
-  <div class="info-list">
-    <ul class="list-upper">
-      <li><i class="fas fa-home"></i> <%= post.restaurant %></li>
+  <div class="info-list-left">
+    <%= link_to image_tag(post.image, class: "list-image"), post_path(post.id) %>
+  </div>
+  <div class="info-list-right">
+    <ul class="list">
+      <li class="list-content"><i class="fas fa-home"></i>　<%= post.restaurant %></li>
       <li class="list-content">
-        <i class="fas fa-map-marker-alt"></i>
+        <i class="fas fa-map-marker-alt"></i>　
         <%= post.prefecture.name %> <%= post.city %> <%= post.address %><%= post.buiding %>
       </li>
-      <li class="list-content"><i class="far fa-bookmark"></i>
-        <%= post.category.name %>[ <%= post.compartment.name %>,<%= post.reserved.name %> ]
+      <li class="list-content"><i class="far fa-bookmark"></i>　
+        <%= post.category.name %>　[ <%= post.compartment.name %>,<%= post.reserved.name %> ]
       </li>
-    </ul>
-    <ul class="list-lower">
-      <li><i class="fas fa-coins"></i> <%= post.budget.name %></li>
-      <li class="list-user-icon"><i class="fas fa-user"></i>
+      <li class="list-content"><i class="fas fa-coins"></i>　<%= post.budget.name %></li>
+      <li class="list-content"><i class="fas fa-user"></i>　
         <%= link_to post.user.name, user_path(post.user.id), class: "list-user-name" %>
       </li>
     </ul>
