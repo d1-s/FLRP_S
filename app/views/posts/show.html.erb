@@ -29,7 +29,7 @@
         </ul>
         <ul class="show-list-lower">
           <li><i class="fas fa-coins"></i>　<%= @post.budget.name %></li>
-          <li class="show-list-user-icon"><i class="far fa-user"></i>
+          <li class="show-list-user-icon"><i class="fas fa-user"></i>
             <%= link_to @post.user.name, user_path(@post.user.id), class: "show-list-user-name" %>
           </li>
         </ul>
@@ -43,20 +43,31 @@
       </div>
 
       <div class="comment-field">
-
-        <%= form_with model: [@post, @comment], local: true do |f| %>
-          <%= f.text_area :text %>
-          <%= f.submit "コメントする" %>
-        <% end %>
+        <p class="comment-title">【 コメント 】</p>
 
         <div class="comments">
           <% @comments.each do |comment| %>
-            <p>
-              <%= comment.text %>
-              <span><%= comment.user.name %></span>
-            </p>
+            <div class="comments-content">
+              <span><i class="fas fa-user"></i> 
+                <%= link_to comment.user.name, user_path(comment.user.id), class: "comment-user" %>
+              </span>
+              <span class="comment-text"><%= comment.text %>
+                <% if user_signed_in? && current_user.id == comment.user.id %>
+                  <%= link_to post_comment_path(comment.post.id), class: "delete-btn", method: :delete do %>
+                    <i class="fas fa-trash-alt"></i>
+                  <% end %>
+                <% end %>
+              </span>
+            </div>
           <% end %>
         </div>
+
+        <%= form_with model: [@post, @comment], local: true do |f| %>
+          <div class="comment-box">
+            <%= f.text_field :text, class: "comment-wright" %>
+            <%= f.submit "コメントする", class: "comment-btn" %>
+          </div>
+        <% end %>
 
       </div>
 
