@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
     redirect_to post_path(comment.post.id)
   end
 
+  def destroy
+    comment.destroy
+    redirect_to post_path(comment.post.id)
+  end
+
   private
 
   def comment_params
