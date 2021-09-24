@@ -53,7 +53,7 @@
               </span>
               <span class="comment-text"><%= comment.text %>
                 <% if user_signed_in? && current_user.id == comment.user.id %>
-                  <%= link_to post_comment_path(comment.post.id), class: "delete-btn", method: :delete do %>
+                  <%= link_to post_comment_path(comment.post.id), class: "delete-btn", method: :delete, data: { confirm: '【確認】コメントを削除しますか？' }, title: 'コメント削除' do %>
                     <i class="fas fa-trash-alt"></i>
                   <% end %>
                 <% end %>
