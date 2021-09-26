@@ -3,7 +3,9 @@
 
   <div class="main">
 
-    <%= render "search_form" %>
+    <div class="side-bar">
+      <%= render partial: "shared/side_bar", locals: { post: @posts } %>
+    </div>
 
     <div class="main-contents">
       <% if @posts.any? %>

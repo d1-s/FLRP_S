@@ -1,0 +1,82 @@
+<div class="side-bar">
+  <div class="side-header">
+    <%= link_to image_tag("FLRP_S.png", class: "flrps-icon"), "/" %>
+  </div>
+  <div class="side-box">
+
+    <div class="user-nav-top">
+      <h4><i class="far fa-id-badge"></i></h4>
+      <% if user_signed_in? %>
+        <h4 class="user-nav-name"><%= current_user.name %></h4>
+      <% else %>
+        <h4 class="user-nav-name">未ログインユーザー</h4>
+      <% end %>
+    </div>
+
+    <div class="user-nav">
+      <% if user_signed_in? %>
+        <div class="user-nav-lists">
+          <%= link_to user_path(current_user.id) do %>
+            <button class="my-page-btn">マイページ <i class="fas fa-user"></i></button>
+          <% end %>
+          <%= link_to new_post_path do %>
+            <button class="new-post-btn">投稿する <i class="fas fa-pen"></i></button>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="user-nav-lists">
+          <%= link_to new_user_session_path do %>
+            <button class="nav-btn">ログイン <i class="fas fa-sign-in-alt"></i></button>
+          <% end %>
+          <%= link_to new_user_registration_path do %>
+            <button class="nav-btn">新規登録 <i class="fas fa-user-plus"></i></button>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+    <%= search_form_for @q, class: "search-form" do |f| %>
+      <div class="search-nav">
+        <h4 class="search-nav-top"><i class="fas fa-search"></i> 絞り込み</h4>
+        <div class="search-nav-main">
+          <div class="search-content">
+            <%= f.label "シチュエーション", class: "search-label" %>
+          </div>
+          <div class="select-box">
+            <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1"}) %>
+          </div>
+          <div class="search-content">
+            <%= f.label "都道府県", class: "search-label" %>
+          </div>
+          <div class="select-box">
+            <%= f.collection_select(:prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1"}) %>
+          </div>
+          <div class="search-content">
+            <%= f.label "個室／貸切", class: "search-label" %>
+          </div>
+          <div class="select-box">
+            <%= f.collection_select(:compartment_id_eq, Compartment.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-2"}) %>
+            <%= f.collection_select(:reserved_id_eq, Reserved.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-2"}) %>
+          </div>
+          <div class="search-content">
+            <%= f.label "予算", class: "search-label" %>
+          </div>
+          <div class="select-box">
+            <%= f.collection_select(:budget_id_eq, Budget.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1"}) %>
+          </div>
+        </div>
+        <div class="search-act">
+          <%= f.submit "検索", class: "search-btn" %>
+        </div>
+      </div>
+    <% end %>
+
+    <% if user_signed_in? %>
+      <div class="sign-out-action">
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <button class="sign-out-btn">ログアウトする <i class="fas fa-sign-out-alt"></i></button>
+        <% end%>
+      </div>
+    <% end%>
+
+  </div>
+</div>
