@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comments
 
-  enum sex: { man: 0, woman: 1 }
+  enum gender: { man: 0, woman: 1 }
   with_options presence: true do
     validates :name
     validates :gender

@@ -31,11 +31,6 @@
   display: flex;
 }
 
-.gender-field {
-  padding: 10px 30px;
-  display: flex;
-}
-
 .label-part {
   width: 220px;
   display: flex;
@@ -81,6 +76,15 @@
   border: 1px solid silver;
   border-radius: 4px;
   font-size: 16px;
+}
+
+.gender-field {
+  padding: 10px 30px;
+  display: flex;
+}
+
+.gender-name {
+  font-weight: bold;
 }
 
 .gender-man {

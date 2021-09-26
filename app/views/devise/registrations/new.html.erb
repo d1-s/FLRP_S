@@ -10,7 +10,7 @@
 
         <div class="form-group">
           <div class="label-part">
-            <%= f.label "■ ニックネーム", class: "label-name" %><br />
+            <%= f.label :name, "■ ニックネーム", class: "label-name" %><br />
             <span class="required">必須</span>
           </div>
           <%= f.text_field :name, class: "users-text", placeholder: "例）山田 太郎", autofocus: true %>
@@ -18,7 +18,7 @@
 
         <div class="form-group">
           <div class="label-part">
-            <%= f.label "■ メールアドレス", class: "label-name" %><br />
+            <%= f.label :email, "■ メールアドレス", class: "label-name" %><br />
             <span class="required">必須</span>
           </div>
           <%= f.email_field :email, class: "users-text", placeholder: "例）email@com", autocomplete: "email" %>
@@ -26,16 +26,16 @@
 
         <div class="gender-field">
           <div class="label-part">
-            <%= f.label "■ 性別", class: "label-name" %><br />
+            <span class="gender-name">■ 性別</span><br />
             <span class="required">必須</span>
           </div>
           <div class="gender-man">
-            <%= f.label "男" %>
             <%= f.radio_button :gender, :man %>
+            <%= f.label :gender, "男性", {value: :man} %>
           </div>
           <div class="gender-womn">
-            <%= f.label "女" %>
             <%= f.radio_button :gender, :woman %>
+            <%= f.label :gender, "女性", {value: :woman} %>
           </div>
         </div>
 
@@ -56,7 +56,7 @@
         </div>
 
         <div class="form-group">
-          <%= f.label "■ 自己紹介文", class: "profile-label" %>
+          <%= f.label "■ プロフィール", class: "profile-label" %>
           <%= f.text_area :profile, class: "profile", placeholder: "自由にご記入ください（最大255文字）" %>
         </div>
 

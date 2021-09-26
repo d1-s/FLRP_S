@@ -1,0 +1,56 @@
+.user-show-contents {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3vh;
+}
+
+.user-show-field {
+  width: 40vw;
+  height: 15vh;
+  margin-bottom: 20px;
+  background-color: rgba(65,105,225,0.9);
+  border-radius: 10px;
+  padding: 10px 20px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-show-field-upper {
+  display: flex;
+}
+
+.user-name {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+}
+
+.user-gender {
+  font-size: 16px;
+  color: white;
+  margin-left: 40px;
+  padding-top: 3px;
+}
+
+.user-profile {
+  font-size: 16px;
+  color: white;
+  margin-top: 15px;
+  text-decoration: underline;
+}
+
+.profile-contents {
+  font-size: 14px;
+  color: white;
+  margin: 5px 15px;
+}
+
+
+.no-contents-text {
+  font-weight: bold;
+  color: white;
+  text-shadow: 3px 3px 3px black;
+}
