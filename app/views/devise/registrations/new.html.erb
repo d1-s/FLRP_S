@@ -1,10 +1,9 @@
 <div class="overall">
-  <%= render "shared/second_header" %>
-  <div class="main">
+  <%= render "shared/header" %>
+
+  <div class="user-form-main">
     <div class="sign-up-page">
-      <div class="page-title">
-        <h1>新規登録</h1>
-      </div>
+      <h1 class="page-title">新規登録</h1>
 
       <%= form_with model: @user, url: user_registration_path, class: "user-form", local: true do |f| %>
         <%# <%= render 'shared/error_messages', model: f.object %>
@@ -67,5 +66,6 @@
       <% end %>
     </div>
   </div>
+  
   <%= render "shared/footer" %>
 </div>

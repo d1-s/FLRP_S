@@ -3,8 +3,8 @@
 <div class="overall">
   <%= render "shared/header" %>
   
-  <div class="main">
-    <div class="post-page">
+  <div class="post-page">
+    <div class="post-content">
       <div class="post-page-title">
         投稿内容の編集
       </div>
@@ -25,7 +25,7 @@
             <%= f.label "■ 来店日", class: "p-label" %>
             <span class="mark">必須</span>
           </div>
-          <%= f.date_field :visit, class: "post-text", autofocus: true %>
+          <%= f.date_field :visit, class: "post-date", autofocus: true %>
         </div>
 
         <div class="p-form-group">
@@ -50,7 +50,7 @@
             <%= f.label "■ 営業時間", class: "p-label" %>
             <span class="mark">必須</span>
           </div>
-          <%= f.time_select :open, prompt: "--" %>　〜　<%= f.time_select :close, prompt: "--" %>
+          <%= f.time_select :open, prompt: "--", ignore_data: true %>　〜　<%= f.time_select :close, prompt: "--", ignore_data: true %>
         </div>
 
         <div class="p-form-group">
@@ -98,7 +98,7 @@
         </div>
 
         <div class="post-actions">
-          <%= f.submit "変更する", class: "p_form_btn" %>
+          <%= f.submit "編集する", class: "p_form_btn" %>
         </div>
 
       <% end %>

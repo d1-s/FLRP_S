@@ -1,8 +1,13 @@
+.user-form-main {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 20px;
+}
 
 .sign-up-page {
   width: 50vw;
   text-align: center;
-  height: 100%;
   background-color: rgba(255,255,255,0.7);
   border-radius: 30px;
   margin-bottom: 50px;
@@ -15,6 +20,7 @@
   padding-bottom: 20px;
   border-bottom: 1px solid black;
 }
+
 /* 入力フォーム */
 .user-form {
   padding-top: 20px;
@@ -88,6 +94,7 @@
 .actions {
   margin: 20px 0 20px;
 }
+/* //入力フォーム */
 
 /* アカウント登録ボタン */
 .u_form_btn {
