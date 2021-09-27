@@ -41,7 +41,7 @@
 
         <div class="form-group">
           <div class="label-part">
-            <%= f.label "■ パスワード", class: "label-name" %><br />
+            <%= f.label :password, "■ パスワード", class: "label-name" %><br />
             <span class="required">必須</span>
           </div>
           <%= f.password_field :password, class: "users-text", placeholder: "半角英数字6文字以上", autocomplete: "off" %>
@@ -49,7 +49,7 @@
 
         <div class="form-group">
           <div class="label-part">
-            <%= f.label "■ パスワード（確認）", class: "label-name" %><br />
+            <%= f.label :password_confirmation, "■ パスワード（確認）", class: "label-name" %><br />
             <span class="required">必須</span>
           </div>
           <%= f.password_field :password_confirmation, class: "users-text", placeholder: "パスワードをもう１度入力", autocomplete: "off" %>
@@ -64,6 +64,13 @@
           <%= f.submit "アカウント登録", class: "u_form_btn" %>
         </div>
       <% end %>
+
+      <div class="actions">
+        <%= link_to root_path do %>
+          <button class="back-btn">戻る <i class="fas fa-undo-alt"></i></button>
+        <% end %>
+      </div>
+      
     </div>
   </div>
   
