@@ -78,7 +78,7 @@
 .new-post-btn {
   width: 100%;
   background-color: rgba(127,255,212,0.9);
-  padding: 7px 10px;
+  padding: 7px 15px;
   border-radius: 20px;
   color: black;
   font-weight: bold;
@@ -95,8 +95,13 @@
 
 .search-nav-top {
   border-bottom: 1px solid black;
-  padding-bottom: 10px;
-  margin: 20px 10px 10px;
+  margin: 10px 10px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-nav-name {
   font-weight: bold;
 }
 
@@ -130,12 +135,22 @@
   height: 4vh;
   padding: auto;
   border-radius: 0px;
+  border: 1px solid silver;
 }
 
 .search-select-2 {
   width: 49%;
   height: 4vh;
   padding: auto;
+  border-radius: 0px;
+  border: 1px solid silver;
+}
+
+.search-select-3 {
+  width: 46%;
+  height: 4vh;
+  padding-left: 5px;
+  border: 1px solid silver;
   border-radius: 0px;
 }
 
@@ -168,3 +183,26 @@
   border-top: 1px solid;
   border-bottom: 1px solid;
 }
+
+/* マイページ用 */
+.my-side-bar {
+  width: 30vw;
+  margin-top: 3vh;
+  position: sticky;
+  top: 0;
+}
+
+.search-reset-btn {
+  font-size: 6px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 7px;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.reset-mark {
+  font-size: 12px;
+}
+/* //マイページ用 */

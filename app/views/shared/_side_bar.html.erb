@@ -36,7 +36,9 @@
     </div>
     <%= search_form_for @q, class: "search-form" do |f| %>
       <div class="search-nav">
-        <h4 class="search-nav-top"><i class="fas fa-search"></i> 絞り込み</h4>
+        <div class="search-nav-top">
+          <h4 class="search-nav-name"><i class="fas fa-search"></i> 絞り込み</h4>
+        </div>
         <div class="search-nav-main">
           <div class="search-content">
             <%= f.label "シチュエーション", class: "search-label" %>

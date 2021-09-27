@@ -53,7 +53,7 @@
 
 .info-list-right {
   width: 55%;
-  margin: 5px 5px 10px;
+  margin: 10px 5px 0 ;
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -63,7 +63,6 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .list-content {

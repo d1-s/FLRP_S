@@ -25,7 +25,7 @@ class Post < ApplicationRecord
   validates :image, presence: true
 
   def self.ransackable_attributes(*)
-    %w[category_id compartment_id reserved_id prefecture_id budget_id]
+    %w[visit category_id compartment_id reserved_id prefecture_id budget_id user_id]
   end
 
   def self.ransackable_associations(*)
