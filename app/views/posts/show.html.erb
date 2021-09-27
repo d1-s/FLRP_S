@@ -1,52 +1,96 @@
-<%= render "shared/header" %>
-
 <div class="overall">
+  <div class="main">
+    
+    <div class="side-bar">
+      <%= render "shared/side_bar" %>
+    </div>
 
-  <div class="post-show-page">
-    <div class="post-show-contents">
-      <h1><%= @post.restaurant %> の詳細</h1>
-      <p>by <%= @post.user.name %></p>
+    <div class="show-main">
+      <div class="post-show-content">
+        <h3><i class="fas fa-home"></i> <%= @post.restaurant %></h3>
+        <h4><i class="fas fa-pen"></i> <%= link_to @post.user.name, user_path(@post.user.id), class: "show-user-name" %></h4>
+      </div>
 
       <div class="post-show">
-        <h1><%= image_tag @post.image.variant(resize: '500x500') %></h1>
-        <% if user_signed_in? && current_user.id %>
-          <%= link_to "編集", edit_post_path(@post.id) %>
-          <%= link_to "削除", post_path(@post.id), method: :delete %>
-        <% end %>
-        <p>来店日<%= @post.visit %></p>
-        <p>店名<%= @post.restaurant %></p>
-        <p>カテゴリー
-          <%= @post.category.name %>
-          <%= @post.compartment.name %>
-          <%= @post.reserved.name %>
-        </p>
-        <p>営業時間
-          <%= @post.open %>
-          <%= @post.close %>
-        </p>
-        <p>住所<%= @post.address %></p>
-        <p>予算<%= @post.budget.name %></p>
-        <p>おすすめポイント／感想<%= @post.introduction %></p>
-        <p>投稿者<%= @post.user.name %></p>
 
-        <div class="comment-field">
-          <%= form_with model: [@post, @comment], local: true do |f| %>
-            <%= f.text_area :text %>
-            <%= f.submit "コメントする" %>
-          <% end %>
-          <div class="comments">
-            <% @comments.each do |comment| %>
-              <p>
-                <%= comment.text %>
-                <span><%= comment.user.name %></span>
-              </p>
+        <%= image_tag @post.image, class: "show-image" %>
+        <% if user_signed_in? && current_user.id == @post.user.id %>
+          <div class="edit-or-delete">
+            <%= link_to edit_post_path(@post.id) do %>
+              <button class="edit-btn">編集 <i class="fas fa-pen"></i></button>
+            <% end%>
+            <%= link_to post_path(@post.id), method: :delete, data: { confirm: "【確認】この投稿を削除しますか？" }, title: '投稿削除' do %>
+              <button class="delete-btn">削除 <i class="fas fa-trash-alt"></i></button>
             <% end %>
           </div>
+        <% end %>
+        <div class="show-info">
+          <ul class="show-list-upper">
+            <li><i class="fas fa-running"></i>　 来店日 <%= l @post.visit, format: :long %></li>
+            <li class="show-list-content"><i class="fas fa-home"></i>　<%= @post.restaurant %></li>
+            <li class="show-list-content">
+              <i class="fas fa-map-marker-alt"></i>　
+              <%= @post.prefecture.name %> <%= @post.city %> <%= @post.address %><%= @post.buiding %>
+            </li>
+            <li class="show-list-content"><i class="far fa-bookmark"></i>　
+              <%= @post.category.name %> [ <%= @post.compartment.name %>,<%= @post.reserved.name %> ]
+            </li>
+            <li class="show-list-content"><i class="far fa-clock"></i>　<%= l @post.open, format: :short %>〜<%= l @post.close, format: :short %></li>
+          </ul>
+          <ul class="show-list-lower">
+            <li><i class="fas fa-coins"></i>　<%= @post.budget.name %></li>
+            <li class="show-list-user-icon"><i class="fas fa-user"></i>
+              <%= link_to @post.user.name, user_path(@post.user.id), class: "show-list-user-name" %>
+            </li>
+          </ul>
+          <% if @post.introduction.present? %>
+            <div class="post-intro">
+              <span><i class="fas fa-lightbulb"></i>　おすすめポイント／感想</span>
+              <span class="introduction"><%= @post.introduction %></span>
+            </div>
+          <% end %>
+
+        </div>
+
+        <div class="comment-field">
+          <p class="comment-title">【 コメント 】</p>
+
+          <div class="comments">
+            <% @comments.each do |comment| %>
+              <div class="comments-content">
+                <span><i class="fas fa-user"></i> 
+                  <%= link_to comment.user.name, user_path(comment.user.id), class: "comment-user" %>
+                </span>
+                <span class="comment-text"><%= comment.text %>
+                  <% if user_signed_in? && current_user.id == comment.user.id %>
+                    <%= link_to post_comment_path(comment.post.id), class: "comment-d-btn", method: :delete, data: { confirm: "【確認】コメントを削除しますか？" }, title: 'コメント削除' do %>
+                      <i class="fas fa-trash-alt"></i>
+                    <% end %>
+                  <% end %>
+                </span>
+              </div>
+            <% end %>
+          </div>
+
+          <%= form_with model: [@post, @comment], local: true do |f| %>
+            <div class="comment-box">
+              <%= f.text_field :text, class: "comment-wright" %>
+              <%= f.submit "コメントする", class: "comment-btn" %>
+            </div>
+          <% end %>
+
         </div>
 
       </div>
+
+      <%# CSSは apps/assets/stylesheets/posts/index.scss に記載 %>
+      <%= link_to root_path do %>
+        <button class="back-btn">一覧に戻る <i class="fas fa-undo-alt"></i></button>
+      <% end %>
+      <%# //CSSは apps/assets/stylesheets/posts/index.scss に記載 %>
+
     </div>
   </div>
 
-<%= render "shared/footer" %>
+  <%= render "shared/footer" %>
 </div>

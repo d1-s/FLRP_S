@@ -4,33 +4,117 @@
   background-size: cover;
 }
 
-.index-page {
+.main {
   display: flex;
-  align-items: center;
-  flex-direction:column;
-  padding: 20px 0;
+  align-items: flex-start;
+  margin: 0 0 20px;
 }
 
-.search {
-  padding-bottom: 20px;
+// 投稿一覧
+.main-contents {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10vh;
 }
 
 .posts {
+  width: 60vw;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .post-list {
-  width: 50vw;
+  height: 10vh;
   background-color: rgba(255,255,255,0.5);
   height: auto;
   border: 1px solid darkgray;
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 10px 25px;
+  margin-bottom: 20px;
+  display: flex;
 }
 
-#search-btn {
-  background-color: skyblue;
+.info-list-left {
+  width: 45%;
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list-image {
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 20px);
+  border: 1px solid black;
+}
+
+.info-list-right {
+  width: 55%;
+  margin: 10px 5px 0 ;
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.list-content {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.list-user-name {
+  background-color: rgba(128,128,128,0.5);
+  padding: 2px 10px;
+  border-radius: 10px;
+  color: navy;
+}
+
+// ページネーション自体のデザイン
+.pagination>li>a {
+  border: none;
+  color: rgba(0,0,205,1);
+  background-color: rgba(255,255,255,0.5);
+}
+
+// 表示しているページ番号のデザイン
+.pagination>.active>a {
+  background: rgba(0,0,205,0.5);
+  border-radius: 5px;
+}
+
+// ホバー時のデザイン
+.pagination>li>a:hover {
+  border-radius: 5px;
+}
+
+// 絞り込みの結果が該当なしの時
+.not-content-message {
+  width: 40vw;
+  height: 100px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 100px;
+  background-color: rgba(255,255,255,0.5);
+  font-size: 24px;
+}
+
+.back-btn {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  background-color: rgba(0,0,0,0.5);
+  padding: 5px 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: none;
 }

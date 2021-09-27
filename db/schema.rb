@@ -51,7 +51,10 @@ ActiveRecord::Schema.define(version: 2021_09_20_050926) do
     t.integer "reserved_id", null: false
     t.time "open", null: false
     t.time "close", null: false
+    t.integer "prefecture_id", null: false
+    t.string "city", null: false
     t.string "address", null: false
+    t.string "buiding"
     t.integer "budget_id", null: false
     t.text "introduction"
     t.bigint "user_id", null: false

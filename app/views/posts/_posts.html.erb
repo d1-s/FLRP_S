@@ -1,14 +1,22 @@
 <div class="post-list">
-
-    <%= link_to image_tag(post.image.variant(resize: '500x500')), post_path(post.id) %>
-    <p>来店日     <%= post.visit %></p>
-    <p> <%= post.restaurant %></p>
-    <p>カテゴリー
-        <%= post.category.name %>
-        <%= post.compartment.name %>
-        <%= post.reserved.name %>
-        </p>
-    <p>予算      <%= post.budget.name %></p>
-    <p>投稿者 <%= link_to post.user.name, user_path(post.user.id) %></p>
-
+  <div class="info-list-left">
+    <%= link_to image_tag(post.image, class: "list-image"), post_path(post.id) %>
+  </div>
+  <div class="info-list-right">
+    <ul class="list">
+      <li><i class="fas fa-running"></i>　来店日　<%= l post.visit, format: :long %></li>
+      <li class="list-content"><i class="fas fa-home"></i>　<%= post.restaurant %></li>
+      <li class="list-content">
+        <i class="fas fa-map-marker-alt"></i>　
+        <%= post.prefecture.name %> <%= post.city %> <%= post.address %><%= post.buiding %>
+      </li>
+      <li class="list-content"><i class="far fa-bookmark"></i>　
+        <%= post.category.name %>　[ <%= post.compartment.name %>,<%= post.reserved.name %> ]
+      </li>
+      <li class="list-content"><i class="fas fa-coins"></i>　<%= post.budget.name %></li>
+      <li class="list-content"><i class="fas fa-user"></i>　
+        <%= link_to post.user.name, user_path(post.user.id), class: "list-user-name" %>
+      </li>
+    </ul>
+  </div>
 </div>

@@ -1,10 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :search_post, only: [:index, :show]
 
   def index
-    @q = Post.ransack(params[:q])
-    # binding.pry
-    @posts = @q.result(distinct: true).includes(:user).order("created_at DESC")
+    @posts = @q.result(distinct: true).includes(:user).order('created_at DESC').page(params[:page]).per(5)
   end
 
   def new
@@ -22,7 +21,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = Comment.includes(:user)
+    @comments = @post.comments.includes(:user)
   end
 
   def edit
@@ -48,12 +47,16 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:visit, :restaurant, :category_id, :compartment_id, :reserved_id, :open, :close,
-                                 :address, :budget_id, :image, :introduction).merge(user_id: current_user.id)
+    params.require(:post).permit(:visit, :restaurant, :category_id, :compartment_id, :reserved_id, :open, :close, :prefecture_id,
+                                 :city, :address, :buiding, :budget_id, :image, :introduction).merge(user_id: current_user.id)
   end
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def search_post
+    @q = Post.ransack(params[:q])
   end
 
 end

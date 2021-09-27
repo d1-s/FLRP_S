@@ -1,61 +1,113 @@
-<%= render "shared/header" %>
+<%# CSSは apps/assets/stylesheets/posts/new を併用 %>
 
 <div class="overall">
+  <%= render "shared/header" %>
   
-  <div class="post-content-main">
+  <div class="post-page">
     <div class="post-content">
-      <h1 class="post-content-title">投稿内容を変更</h1>
+      <div class="post-page-title">
+        投稿内容の編集
+      </div>
 
-      <%= form_with model: @post, local: true do |f| %>
+      <%= form_with model: @post, class: "post-form", local: true do |f| %>
         <%# <%= render 'shared/error_messages', model: f.object %>
 
         <div class="p-form-group">
-          <%= f.label "来店日" %>
-          <%= f.date_field :visit, autofocus: true %>
+          <div class="form-left">
+            <%= f.label "■ 店名", class: "p-label" %>
+            <span class="mark">必須</span>
+          </div>
+            <%= f.text_field :restaurant, class: "post-text", placeholder: "例）居酒屋 ●●店", autofocus: true %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "店名" %>
-          <%= f.text_area :restaurant %>
+          <div class="form-left">
+            <%= f.label "■ 来店日", class: "p-label" %>
+            <span class="mark">必須</span>
+          </div>
+          <%= f.date_field :visit, class: "post-date", autofocus: true %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "カテゴリー" %>
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box"}) %>
-          <%= f.collection_select(:compartment_id, Compartment.all, :id, :name, {}, {class:"select-box"}) %>
-          <%= f.collection_select(:reserved_id, Reserved.all, :id, :name, {}, {class:"select-box"}) %>
+          <div class="form-left">
+            <%= f.label "■ シチュエーション", class: "p-label" %>
+            <span class="mark">必須</span>
+          </div>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: '---'}, {class: "select-box-1"}) %>
+        </div>
+
+        <div class="p-form-nst">
+          <div class="form-left">
+            <%= f.label "[ 個室／貸切 ]", class: "form-nst" %>
+            <span class="mark">必須</span>
+          </div>
+          <%= f.collection_select(:compartment_id, Compartment.all, :id, :name, {}, {class: "select-box-2"}) %>
+          <%= f.collection_select(:reserved_id, Reserved.all, :id, :name, {}, {class: "select-box-2"}) %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "営業時間" %>
-          <%= f.time_select :open, prompt: "--" %> 〜 <%= f.time_select :close, prompt: "--" %>
+          <div class="form-left">
+            <%= f.label "■ 営業時間", class: "p-label" %>
+            <span class="mark">必須</span>
+          </div>
+          <%= f.time_select :open, prompt: "--", ignore_data: true %>　〜　<%= f.time_select :close, prompt: "--", ignore_data: true %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "住所" %>
-          <%= f.text_area :address %>
+          <div class="form-address">
+            <%= f.label "■ 住所", class: "address-label" %>
+            <ul class="form-address-nst">
+              <li class="address-list"><%= f.label "都道府県" %><span class="mark">必須</span></li>
+              <li class="address-list"><%= f.label "市町村" %><span class="mark">必須</span></li>
+              <li class="address-list"><%= f.label "番地" %><span class="mark">必須</span></li>
+              <li class="address-list"><%= f.label "建物名" %></li>
+            </ul>
+            <div class="form-address-content">
+              <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: '---'}, {class:"select-box-3"}) %>
+              <%= f.text_field :city, class: "address-text", placeholder: "市町村名を入力してください" %>
+              <%= f.text_field :address, class: "address-text", placeholder: "番地を入力してください" %>
+              <%= f.text_field :buiding, class: "address-text", placeholder: "ビル名等がある場合は入力してください" %>
+            </div>
+          </div>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "予算" %>
-          <%= f.collection_select(:budget_id, Budget.all, :id, :name, {}, {class:"select-box"}) %>
+          <div class="form-left">
+            <%= f.label "■ 予算", class: "p-label" %>
+            <span class="mark">必須</span>
+          </div>
+          <%= f.collection_select(:budget_id, Budget.all, :id, :name, {prompt: '---'}, {class:"select-box-1"}) %>
         </div>
 
         <div class="p-form-group">
-          <%= f.label "画像（外観／料理）" %>
-          <%= f.file_field :image %>
+          <div class="image-form-left">
+            <div class="image-form-upper">
+              <%= f.label "■ 画像（外観／料理）", class: "p-label" %>
+              <span class="mark">必須</span>
+            </div>
+            <%= f.file_field :image, class: "image-form-lower" %>
+          </div>
+          <div class="image-form-right">
+            プレビュー
+           </div>
         </div>
 
-        <div class="p-form-group">
-          <%= f.label "おすすめポイント／感想" %>
-          <%= f.text_area :introduction %>
+        <div class="re-form-group">
+          <%= f.label "■ おすすめポイント／感想", class: "p-label" %>
+          <%= f.text_area :introduction, class: "intro-text", placeholder: "例）パスタが絶品！　焼酎の品揃えが良き！ …etc" %>
         </div>
 
         <div class="post-actions">
-          <%= f.submit "変更する", class: "p_form_btn" %>
+          <%= f.submit "編集する", class: "p_form_btn" %>
         </div>
 
       <% end %>
+
+      <div class="post-actions">
+        <%= link_to post_path(@post.id) do %>
+          <button class="back-btn">戻る <i class="fas fa-undo-alt"></i></button>
+        <% end %>
+      </div>
 
     </div>
   </div>

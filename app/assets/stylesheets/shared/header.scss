@@ -1,56 +1,18 @@
-.main-header {
-  height: 60px;
-  width: 100vw;
-  background-color: rgba(237,234,237,0.3);
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-}
-
-.flrps-icon {
-  height: 40px;
-  margin: 10px 20px;
-}
-
-.nav-right {
-  width: 300px;
-  padding: 20px 30px 20px 0 ;
-}
-
-.header-lists {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-}
-
-.nav-btn {
-  text-decoration: none;
-  color: black;
-  margin-right: 20px;
-  font-size: 20px;
-}
-
-.new-post {
-  text-decoration: none;
-  color: black;
-  margin-right: 20px;
-  font-size: 20px;
-}
-
-.second-header {
-  height: 160px;
-  background-color: lightgray;
-  padding: 30px 0 50px;
+// ヘッダー
+.header-icon {
+  height: 20vh;
+  padding: 30px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .flrps-icon-3 {
   height: 80px;
 }
+// //ヘッダー
 
+// フッター
 .footer {
   height: 40px;
   width: 100vw;
@@ -71,3 +33,4 @@
   height: 20px;
   margin: 10px;
 }
+// //フッター
