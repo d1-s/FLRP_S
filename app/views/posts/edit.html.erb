@@ -103,6 +103,12 @@
 
       <% end %>
 
+      <div class="post-actions">
+        <%= link_to post_path(@post.id) do %>
+          <button class="back-btn">戻る <i class="fas fa-undo-alt"></i></button>
+        <% end %>
+      </div>
+
     </div>
   </div>
 
