@@ -26,7 +26,7 @@
         <% end %>
         <div class="show-info">
           <ul class="show-list-upper">
-            <li><i class="fas fa-running"></i>　 来店日<%= @post.visit %></li>
+            <li><i class="fas fa-running"></i>　 来店日 <%= l @post.visit, format: :long %></li>
             <li class="show-list-content"><i class="fas fa-home"></i>　<%= @post.restaurant %></li>
             <li class="show-list-content">
               <i class="fas fa-map-marker-alt"></i>　
