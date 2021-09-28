@@ -192,6 +192,7 @@
   top: 0;
 }
 
+/* リセットボタン
 .search-reset-btn {
   font-size: 6px;
   color: white;
@@ -205,4 +206,6 @@
 .reset-mark {
   font-size: 12px;
 }
+ //リセットボタン */
+
 /* //マイページ用 */

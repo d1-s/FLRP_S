@@ -15,3 +15,23 @@ ja:
 
     month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
     abbr_month_names: [~, 1月, 2月, 3月, 4月, 5月, 6月, 7月, 8月, 9月, 10月, 11月, 12月]
+
+  activerecord:
+    models:
+      post: 投稿
+    attributes:
+      post:
+        visit: 来店日
+        restaurant: 店名
+        category_id: シチュエーション
+        compartment_id: 個室の有無
+        reserved_id: 貸切の可否
+        open: 開店時間
+        close: 閉店時間
+        prefecture_id: 都道府県
+        city: 市町村
+        address: 番地
+        buiding: 建物名
+        budget_id: 予算
+        introduction: おすすめポイント／感想
+        image: 画像

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     registrations: "users/registrations"
   }
-
   get 'users/:id/profile', to: 'users#show', as: 'user_profile'
 
   root to: 'posts#index'

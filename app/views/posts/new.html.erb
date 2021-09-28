@@ -8,7 +8,9 @@
       </div>
 
       <%= form_with model: @post, url: posts_path, class: "post-form", local: true do |f| %>
-        <%# <%= render 'shared/error_messages', model: f.object %>
+        <div class="error-wrapper">
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
 
         <div class="p-form-group">
           <div class="form-left">
@@ -48,7 +50,7 @@
             <%= f.label "■ 営業時間", class: "p-label" %>
             <span class="mark">必須</span>
           </div>
-          <%= f.time_select :open, prompt: "--", ignore_data: true %>　〜　<%= f.time_select :close, prompt: "--", ignore_data: true %>
+          <%= f.time_field :open, { prompt: true, ignore_data: true } %>　〜　<%= f.time_field :close, { prompt: true, ignore_data: true } %>
         </div>
 
         <div class="p-form-group">
