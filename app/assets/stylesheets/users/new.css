@@ -11,7 +11,7 @@
   background-color: rgba(255,255,255,0.7);
   border-radius: 30px;
   margin-bottom: 50px;
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .page-title {
@@ -23,7 +23,7 @@
 
 /* 入力フォーム */
 .user-form {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .form-group {
@@ -40,6 +40,12 @@
 
 .label-name {
   text-decoration: underline;
+}
+
+.password-wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .profile-label {
@@ -60,6 +66,10 @@
   margin-right: 20px;
 }
 
+.attach-label {
+  font-size: 12px;
+}
+
 .users-text {
   width: calc(100% - 200px - 30px);
   height: 40px;
@@ -67,6 +77,7 @@
   border: 1px solid silver;
   border-radius: 4px;
   font-size: 16px;
+  resize: none;
 }
 
 .profile {
@@ -76,10 +87,11 @@
   border: 1px solid silver;
   border-radius: 4px;
   font-size: 16px;
+  resize: none;
 }
 
 .gender-field {
-  padding: 10px 30px;
+  padding: 0 30px 10px;
   display: flex;
 }
 

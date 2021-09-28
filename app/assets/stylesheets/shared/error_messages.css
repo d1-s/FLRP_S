@@ -1,0 +1,7 @@
+.field_with_errors {
+  display: contents;
+}
+
+.error-message {
+  color: #cc0000;
+}

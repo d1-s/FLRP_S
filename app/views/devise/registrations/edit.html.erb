@@ -6,7 +6,7 @@
       <h1 class="page-title">ユーザー情報を変更</h1>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+        <%= render 'shared/error_messages', model: f.object %>
 
         <div class="form-group">
           <div class="label-part">
@@ -40,15 +40,19 @@
         </div>
 
         <div class="form-group">
-          <div class="label-part">
-            <%= f.label :password, "■ パスワードを変更する", class: "label-name" %><br />
-          </div>
+          <div class="password-wraper">
+            <div class="label-part">
+              <%= f.label :password, "■ パスワードを変更する", class: "label-name" %><br />
+            </div>
+            <span class="attach-label">(英字と数字の両方を含めてください)</span>
+          </div
+          >
           <%= f.password_field :password, class: "users-text", placeholder: "半角英数字6文字以上", autocomplete: "off" %>
         </div>
 
         <div class="form-group">
           <div class="label-part">
-            <%= f.label :password_confirmation, "■ （確認）パスワード変更", class: "label-name" %><br />
+            <%= f.label :password_confirmation, "■ 変更後パスワード（確認）", class: "label-name" %><br />
           </div>
           <%= f.password_field :password_confirmation, class: "users-text", placeholder: "新しいパスワードをもう１度入力", autocomplete: "off" %>
         </div>

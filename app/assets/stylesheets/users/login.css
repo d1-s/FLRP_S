@@ -9,7 +9,7 @@
 }
 
 .i_form_btn {
-  width: 80%;
+  width: 20vw;
   background-color: red;
   color: white;
   font-weight: bold;
@@ -20,16 +20,19 @@
 }
 
 .login-form {
-  padding: 20px 100px;
-  display: block;
+  padding: 10px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form-group-l {
-  padding: 10px;
+  width: 30vw;
+  padding: 10px 20px;
 }
 
 .label-name-l {
-  width: 180px;
+  width: 50%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,4 +46,15 @@
   font-size: 16px;
   margin-top: 10px;
   padding: 2px 10px;
+}
+
+.notice {
+  display: none;
+}
+
+.alert {
+  color: #cc0000;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
