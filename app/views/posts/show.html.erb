@@ -53,7 +53,11 @@
         </div>
 
         <div class="comment-field">
-          <p class="comment-title">【 コメント 】</p>
+          <% if @comments.any? %>
+            <div class="comment-title">【 コメント一覧 】</div>
+          <% else %>
+            <div class="comment-title-no"> ー まだコメントはありません ー </div>
+          <% end %>
 
           <div class="comments">
             <% @comments.each do |comment| %>
@@ -74,7 +78,7 @@
 
           <%= form_with model: [@post, @comment], local: true do |f| %>
             <div class="comment-box">
-              <%= f.text_field :text, class: "comment-wright" %>
+              <%= f.text_field :text, class: "comment-wright", autofocus: true %>
               <%= f.submit "コメントする", class: "comment-btn" %>
             </div>
           <% end %>
