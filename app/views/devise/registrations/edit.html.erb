@@ -6,7 +6,9 @@
       <h1 class="page-title">ユーザー情報を変更</h1>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render 'shared/error_messages', model: f.object %>
+        <div class="error-wrapper">
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
 
         <div class="form-group">
           <div class="label-part">
@@ -37,37 +39,6 @@
             <%= f.radio_button :gender, :woman %>
             <%= f.label :gender, "女性", {value: :woman} %>
           </div>
-        </div>
-
-        <div class="form-group">
-          <div class="password-wraper">
-            <div class="label-part">
-              <%= f.label :password, "■ パスワードを変更する", class: "label-name" %><br />
-            </div>
-            <span class="attach-label">(英字と数字の両方を含めてください)</span>
-          </div
-          >
-          <%= f.password_field :password, class: "users-text", placeholder: "半角英数字6文字以上", autocomplete: "off" %>
-        </div>
-
-        <div class="form-group">
-          <div class="label-part">
-            <%= f.label :password_confirmation, "■ 変更後パスワード（確認）", class: "label-name" %><br />
-          </div>
-          <%= f.password_field :password_confirmation, class: "users-text", placeholder: "新しいパスワードをもう１度入力", autocomplete: "off" %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label "■ プロフィール", class: "profile-label" %>
-          <%= f.text_area :profile, class: "profile", placeholder: "自由にご記入ください（最大255文字）" %>
-        </div>
-
-        <div class="form-group">
-          <div class="label-part">
-            <i><%= f.label :current_password, "現在のパスワード", class: "label-name" %></i> <br />
-            <span class="required">必須</span>
-          </div>
-          <%= f.password_field :current_password, class: "users-text", autocomplete: "current-password", placeholder: "現在のパスワードを入力していください" %>
         </div>
 
         <div class="actions">
