@@ -18,13 +18,20 @@ ja:
 
   activerecord:
     models:
-      user: アカウント
+      post: 投稿
     attributes:
-      user:
-        name: ニックネーム
-        email: メールアドレス
-        gender: 性別
-        password: パスワード
-        password_confirmation: パスワード(確認)
-        profile: プロフィール
-        current_password: 現在のパスワード
+      post:
+        visit: 来店日
+        restaurant: 店名
+        category_id: シチュエーション
+        compartment_id: 個室の有無
+        reserved_id: 貸切の可否
+        open: 開店時間
+        close: 閉店時間
+        prefecture_id: 都道府県
+        city: 市町村
+        address: 番地
+        buiding: 建物名
+        budget_id: 予算
+        introduction: おすすめポイント／感想
+        image: 画像

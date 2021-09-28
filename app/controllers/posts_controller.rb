@@ -12,7 +12,8 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.save
+    if @post.valid?
+      @post.save
       redirect_to root_path
     else
       render :new
@@ -41,7 +42,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @results = @q.result(distinct: true)
+    # @results = @q.result(distinct: true)
   end
 
   private
