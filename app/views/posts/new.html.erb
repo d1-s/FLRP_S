@@ -8,7 +8,9 @@
       </div>
 
       <%= form_with model: @post, url: posts_path, class: "post-form", local: true do |f| %>
-        <%= render 'shared/error_messages', model: f.object %>
+        <div class="error-wrapper">
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
 
         <div class="p-form-group">
           <div class="form-left">

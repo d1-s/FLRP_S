@@ -2,6 +2,25 @@
   display: contents;
 }
 
+.error-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.error-alert {
+  background-color: rgba(255,127,191,0.8);
+  border-radius: 5px;
+  padding: 2px 3vw 0;
+}
+
+.error-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .error-message {
-  color: #cc0000;
+  list-style: circle;
+  padding: 2px;
+  color: #660000;
 }

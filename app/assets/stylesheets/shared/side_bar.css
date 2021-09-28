@@ -185,13 +185,14 @@
 }
 
 /* マイページ用 */
-/* .my-side-bar {
+.my-side-bar {
   width: 30vw;
   margin-top: 3vh;
   position: sticky;
   top: 0;
 }
 
+/* リセットボタン
 .search-reset-btn {
   font-size: 6px;
   color: white;
@@ -204,5 +205,7 @@
 
 .reset-mark {
   font-size: 12px;
-} */
+}
+ //リセットボタン */
+
 /* //マイページ用 */

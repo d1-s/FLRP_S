@@ -6,7 +6,9 @@
       <h1 class="page-title">新規登録</h1>
 
       <%= form_with model: @user, url: user_registration_path, class: "user-form", local: true do |f| %>
-        <%= render 'shared/error_messages', model: f.object %>
+        <div class="error-wrapper">
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
 
         <div class="form-group">
           <div class="label-part">

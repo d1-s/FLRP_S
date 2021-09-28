@@ -45,8 +45,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_update_path_for(resource)
-    # 自分で設定した「マイページ」へのパス
-    user_profile_path(current_user)
+    user_profile_path(current_user)  # 自分で設定した「マイページ」へのパス
   end
   
 

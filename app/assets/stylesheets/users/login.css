@@ -53,7 +53,12 @@
 }
 
 .alert {
-  color: #cc0000;
+  margin-top: 10px;
+  background-color: rgba(255,127,191,0.8);
+  border-radius: 5px;
+  padding: 2px 3vw;
+  list-style: circle;
+  color: #660000;
   font-size: 14px;
   text-align: center;
 }
