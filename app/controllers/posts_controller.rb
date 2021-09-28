@@ -42,7 +42,6 @@ class PostsController < ApplicationController
   end
 
   def search
-    # @results = @q.result(distinct: true)
   end
 
   private
