@@ -76,10 +76,14 @@
             <% end %>
           </div>
 
-          <%= form_with model: [@post, @comment], local: true do |f| %>
-            <div class="comment-box">
+          <% if user_signed_in? %>
+            <%= form_with model: [@post, @comment], class: "comment-form", local: true do |f| %>
               <%= f.text_field :text, class: "comment-wright", autofocus: true %>
               <%= f.submit "コメントする", class: "comment-btn" %>
+            <% end %>
+          <% else %>
+            <div class="not-login-comment">
+              <span class="not-comment-message">※※　コメント機能の利用はログインが必要です　※※</span>
             </div>
           <% end %>
 

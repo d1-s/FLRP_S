@@ -158,7 +158,7 @@
   padding: 5px 20px;
 }
 
-.comment-box {
+.comment-form {
   display: flex;
   justify-content: space-between;
 }
@@ -180,5 +180,19 @@
 
 .comment-d-btn {
   margin-left: 15px;
+}
+
+.not-login-comment {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.not-comment-message {
+  width: 70%;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 2px;
+  text-align: center;
 }
 /* //コメント */
