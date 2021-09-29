@@ -82,17 +82,16 @@
         <div class="p-form-group">
           <div class="image-form-left">
             <div class="image-form-upper">
-              <%= f.label "■ 画像（外観／料理）", class: "p-label" %>
-              <span class="mark">必須</span>
+              <%= f.label "■ 画像（変更する場合のみ）", class: "p-label" %>
             </div>
             <%= f.file_field :image, class: "image-form-lower" %>
           </div>
-          <div class="image-form-right">
-            プレビュー
-           </div>
+          <div class="image-form-right", id="preview">
+            <span class="preview-image", id="no-preview"><i>Image is retained</i></span>
+          </div>
         </div>
 
-        <div class="re-form-group">
+        <div class="intro-wrapper">
           <%= f.label "■ おすすめポイント／感想", class: "p-label" %>
           <%= f.text_area :introduction, class: "intro-text", placeholder: "例）パスタが絶品！　焼酎の品揃えが良き！ …etc" %>
         </div>
