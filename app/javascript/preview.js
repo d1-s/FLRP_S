@@ -13,14 +13,8 @@ document.addEventListener('DOMContentLoaded', function(){
     // //選択した画像のプレビューを表示
 
     document.getElementById('post_image').addEventListener('change', function(e){
-      // const noPreview = document.getElementById('image-display');
-      // noPreview.remove();
-      // すでにプレビュー画像がある場合はそれを削除
       const imageContent = document.querySelector('.preview-image');
-      if (imageContent){
-        imageContent.remove();
-      }
-      // //すでにプレビュー画像がある場合はそれを削除
+      imageContent.remove();
 
       const file = e.target.files[0];
       const blob = window.URL.createObjectURL(file);
