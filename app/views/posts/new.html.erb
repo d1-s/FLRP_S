@@ -87,7 +87,7 @@
               <%= f.label "■ 画像（外観／料理）", class: "p-label" %>
               <span class="mark">必須</span>
             </div>
-            <%= f.file_field :image, class: "image-form-lower" %>
+            <%= f.file_field :image, class: "image-form-lower", id: "post-images" %>
           </div>
           <div class="image-form-right", id="preview">
             <span class="preview-image", id="no-preview"><i>No image…</i></span>

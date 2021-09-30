@@ -33,6 +33,7 @@
   align-items: center;
 }
 
+// １つの投稿
 .post-list {
   width: 100%;
   height: 10vh;
@@ -40,12 +41,16 @@
   height: auto;
   border: 1px solid darkgray;
   border-radius: 10px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   margin-bottom: 20px;
+  // display: flex;
+}
+
+.post-list-wrapper {
   display: flex;
 }
 
-.info-list-left {
+.post-list-left {
   width: 45%;
   margin: 0 10px;
   display: flex;
@@ -59,7 +64,7 @@
   border: 1px solid black;
 }
 
-.info-list-right {
+.post-list-right {
   width: 55%;
   margin: 10px 5px 0 ;
   font-size: 16px;
@@ -84,6 +89,7 @@
   border-radius: 10px;
   color: navy;
 }
+// //１つの投稿
 
 // ページネーション自体のデザイン
 .pagination>li>a {

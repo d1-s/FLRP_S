@@ -1,22 +1,26 @@
 <div class="post-list">
-  <div class="info-list-left">
-    <%= link_to image_tag(post.image, class: "list-image"), post_path(post.id) %>
+  <div class="post-list-upper">
+    <div class="list-content"><i class="fas fa-user"></i>　
+      <%= link_to post.user.name, user_path(post.user.id), class: "list-user-name" %>
+    </div>
   </div>
-  <div class="info-list-right">
-    <ul class="list">
-      <li><i class="fas fa-running"></i>　来店日　<%= l post.visit, format: :long %></li>
-      <li class="list-content"><i class="fas fa-home"></i>　<%= post.restaurant %></li>
-      <li class="list-content">
-        <i class="fas fa-map-marker-alt"></i>　
-        <%= post.prefecture.name %> <%= post.city %> <%= post.address %><%= post.buiding %>
-      </li>
-      <li class="list-content"><i class="far fa-bookmark"></i>　
-        <%= post.category.name %>　[ <%= post.compartment.name %>,<%= post.reserved.name %> ]
-      </li>
-      <li class="list-content"><i class="fas fa-coins"></i>　<%= post.budget.name %></li>
-      <li class="list-content"><i class="fas fa-user"></i>　
-        <%= link_to post.user.name, user_path(post.user.id), class: "list-user-name" %>
-      </li>
-    </ul>
-  </div>
+  <%= link_to post_path(post.id), class: "post-list-wrapper" do %>
+    <div class="post-list-left">
+      <%= image_tag post.image, class: "list-image" %>
+    </div>
+    <div class="post-list-right">
+      <ul class="list">
+        <li><i class="fas fa-running"></i>　来店日　<%= l post.visit, format: :long %></li>
+        <li class="list-content"><i class="fas fa-home"></i>　<%= post.restaurant %></li>
+        <li class="list-content">
+          <i class="fas fa-map-marker-alt"></i>　
+          <%= post.prefecture.name %> <%= post.city %> <%= post.address %><%= post.buiding %>
+        </li>
+        <li class="list-content"><i class="far fa-bookmark"></i>　
+          <%= post.category.name %>　[ <%= post.compartment.name %>,<%= post.reserved.name %> ]
+        </li>
+        <li class="list-content"><i class="fas fa-coins"></i>　<%= post.budget.name %></li>
+      </ul>
+    </div>
+  <% end %>
 </div>
