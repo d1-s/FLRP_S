@@ -55,8 +55,10 @@
 
         <div class="p-form-group">
           <div class="form-address">
-            <%= f.label "■ 住所", class: "address-label" %>
-            <ul class="form-address-nst">
+            <div class="address-label">
+              <%= f.label "■ 住所", class: "p-label" %>
+            </div>
+            <ul class="form-address-lists">
               <li class="address-list"><%= f.label "都道府県" %><span class="mark">必須</span></li>
               <li class="address-list"><%= f.label "市町村" %><span class="mark">必須</span></li>
               <li class="address-list"><%= f.label "番地" %><span class="mark">必須</span></li>
@@ -85,14 +87,14 @@
               <%= f.label "■ 画像（外観／料理）", class: "p-label" %>
               <span class="mark">必須</span>
             </div>
-            <%= f.file_field :image, class: "image-form-lower" %>
+            <%= f.file_field :image, class: "image-form-lower", id: "post-images" %>
           </div>
-          <div class="image-form-right">
-            プレビュー
-           </div>
+          <div class="image-form-right", id="preview">
+            <span class="preview-image", id="no-preview"><i>No image…</i></span>
+          </div>
         </div>
 
-        <div class="re-form-group">
+        <div class="intro-wrapper">
           <%= f.label "■ おすすめポイント／感想", class: "p-label" %>
           <%= f.text_area :introduction, class: "intro-text", placeholder: "例）パスタが絶品！　焼酎の品揃えが良き！ …etc" %>
         </div>
