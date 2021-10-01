@@ -84,12 +84,19 @@
         <div class="p-form-group">
           <div class="image-form-left">
             <div class="image-form-upper">
-              <%= f.label "■ 画像（変更する場合のみ）", class: "p-label" %>
+              <%= f.label "■ 画像", class: "p-label" %>
+              <% unless @post.images.present? %>
+                <span class="mark">必須</span>
+              <% end %>
             </div>
-            <%= f.file_field :image, class: "image-form-lower" %>
+            <% unless @post.images.present? %>
+              <%= f.file_field :images, class: "image-form-lower", id: "post-images" , name: "post[images][]"%>
+            <% end %>
           </div>
           <div class="image-form-right", id="preview">
-            <span class="preview-image", id="no-preview"><i>Image is retained</i></span>
+            <% @post.images.each do |image| %>
+              <%= image_tag image, class: 'preview-image' %>
+            <% end %>
           </div>
         </div>
 
