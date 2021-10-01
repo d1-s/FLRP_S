@@ -41,6 +41,11 @@
           </div>
         </div>
 
+        <div class="form-group">
+          <%= f.label "■ プロフィール", class: "profile-label" %>
+          <%= f.text_area :profile, class: "profile", placeholder: "自由にご記入ください（最大255文字）" %>
+        </div>
+
         <div class="actions">
           <%= f.submit "変更する", class: "e_form_btn" %>
         </div>
