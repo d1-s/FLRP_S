@@ -30,10 +30,35 @@
   margin-bottom: 20px;
 }
 
+/* 画像の表示 */
+.show-image-wrapper {
+  max-height: 320px;
+  display: flex;
+}
+
+.show-image-main {
+  width: calc(70% - 5px);
+  margin-right: 5px;
+}
+
+.show-image-list {
+  width: calc(30% - 5px);
+  padding-left: 5px;
+  border-left: 2px solid darkgray;
+  overflow: scroll;
+}
+
 .show-image {
-  width: 100%;
+  max-width: 100%;
   border: 1px solid black;
 }
+
+.show-image-content {
+  max-width: 100%;
+  border: 1px solid black;
+  margin-bottom: 5px;
+}
+/* /画像の表示 */
 
 /* 編集・削除ボタン */
 .edit-or-delete {
@@ -65,7 +90,7 @@
   border-left: 1px solid;
   border-right: 1px solid;
 }
-/* //編集・削除ボタン */
+/* /編集・削除ボタン */
 
 .show-info {
   font-size: 16px;
@@ -114,7 +139,7 @@
   background-color: white;
   border-radius: 5px;
 }
-/* //投稿詳細 */
+/* /投稿詳細 */
 
 /* コメント */
 .comment-field {
@@ -195,4 +220,4 @@
   border-radius: 2px;
   text-align: center;
 }
-/* //コメント */
+/* /コメント */

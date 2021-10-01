@@ -13,7 +13,16 @@
 
       <div class="post-show">
 
-        <%= image_tag @post.image, class: "show-image" %>
+        <div class="show-image-wrapper">
+          <div class="show-image-main">
+            <%= image_tag @post.images[0], class: "show-image" %>
+          </div>
+          <div class="show-image-list">
+            <% @post.images.each do |image| %>
+              <%= image_tag image, class: "show-image-content" %>
+            <% end %>
+          </div>
+        </div>
 
         <% if user_signed_in? && current_user.id == @post.user.id %>
           <div class="edit-or-delete">
