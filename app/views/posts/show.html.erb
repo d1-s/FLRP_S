@@ -40,7 +40,7 @@
             <li class="show-list-content"><i class="fas fa-home"></i>　<%= @post.restaurant %></li>
             <li class="show-list-content">
               <i class="fas fa-map-marker-alt"></i>　
-              <%= @post.prefecture.name %> <%= @post.city %> <%= @post.address %><%= @post.buiding %>
+              <%= @post.prefecture.name %> <%= @post.city %> <%= @post.address %> <%= @post.buiding %>
             </li>
             <li class="show-list-content"><i class="far fa-bookmark"></i>　
               <%= @post.category.name %> [ <%= @post.compartment.name %>,<%= @post.reserved.name %> ]
@@ -62,6 +62,7 @@
 
         </div>
 
+        <%# コメント機能 %>
         <div class="comment-field">
           <% if @comments.any? %>
             <div class="comment-title">【 コメント一覧 】</div>
@@ -73,7 +74,7 @@
             <% @comments.each do |comment| %>
               <div class="comments-content">
                 <span><i class="fas fa-user"></i> 
-                  <%= link_to comment.user.name, user_path(comment.user.id), class: "comment-user" %>
+                  <%= link_to comment.user.name, user_path(comment.user.id), class: "comment-user" %>　<%= l comment.created_at %>
                 </span>
                 <span class="comment-text"><%= comment.text %>
                   <% if user_signed_in? && current_user.id == comment.user.id %>
@@ -98,6 +99,7 @@
           <% end %>
 
         </div>
+        <%# コメント機能 %>
 
       </div>
 
