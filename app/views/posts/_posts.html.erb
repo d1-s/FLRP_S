@@ -1,12 +1,14 @@
+<%# CSSは assets/stylesheets/posts/index.scss に記載 %>
+
 <div class="post-list">
   <div class="post-list-upper">
-    <div class="list-content"><i class="fas fa-user"></i>　
+    <div class="list-content"><i class="fas fa-user"></i>
       <%= link_to post.user.name, user_path(post.user.id), class: "list-user-name" %>
     </div>
   </div>
   <%= link_to post_path(post.id), class: "post-list-wrapper" do %>
     <div class="post-list-left">
-      <%= image_tag post.image, class: "list-image" %>
+      <%= image_tag post.images[0], class: "list-image" %>
     </div>
     <div class="post-list-right">
       <ul class="list">

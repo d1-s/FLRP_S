@@ -43,7 +43,6 @@
   border-radius: 10px;
   padding: 10px 20px;
   margin-bottom: 20px;
-  // display: flex;
 }
 
 .post-list-wrapper {
@@ -87,9 +86,10 @@
   background-color: rgba(128,128,128,0.5);
   padding: 2px 10px;
   border-radius: 10px;
+  font-weight: bold;
   color: navy;
 }
-// //１つの投稿
+// /１つの投稿
 
 // ページネーション自体のデザイン
 .pagination>li>a {

@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name, length: { maximum: 40 }
-    validates :gender, presence: { message: "を選択してください" }
+    validates :gender, presence: { message: 'を選択してください' }
   end
-  validates :password, on: :create, format: { with: VALID_PASSWORD, message: "は半角英数字それぞれ１文字以上含む６文字以上が必要です" }
+  validates :password, on: :create, format: { with: VALID_PASSWORD, message: 'は半角英数字それぞれ１文字以上含む６文字以上が必要です' }
 end

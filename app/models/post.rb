@@ -2,7 +2,7 @@ class Post < ApplicationRecord
   before_save :set_time_zone
 
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
   has_many :comments, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
@@ -14,20 +14,20 @@ class Post < ApplicationRecord
 
   with_options presence: true do
     validates :city, :address, :open, :close, :compartment_id, :reserved_id
-    validates :image, presence: { message: "を添付してください" }
+    validates :images, presence: { message: 'を添付してください' }
     validates :restaurant, length: { maximum: 40 }
     validates :visit
-    validates :category_id, :budget_id, :prefecture_id, presence: { message: "を選択してください" }
+    validates :category_id, :budget_id, :prefecture_id, presence: { message: 'を選択してください' }
   end
 
   # new時のタイムゾーン対策(LMTになってしまい時間がズレるのを避ける)
   def set_time_zone
-    year = self.visit.year
-    month = self.visit.month
-    day = self.visit.day
+    year = visit.year
+    month = visit.month
+    day = visit.day
 
     self.open = self.open.change(year: year, month: month, day: day)
-    self.close = self.close.change(year: year, month: month, day: day)
+    self.close = close.change(year: year, month: month, day: day)
   end
 
   def self.ransackable_attributes(*)

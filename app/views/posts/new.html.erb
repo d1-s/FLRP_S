@@ -82,12 +82,13 @@
         </div>
 
         <div class="p-form-group">
-          <div class="image-form-left">
+          <div class="image-form-left", id="image-attached">
             <div class="image-form-upper">
               <%= f.label "■ 画像（外観／料理）", class: "p-label" %>
               <span class="mark">必須</span>
             </div>
-            <%= f.file_field :image, class: "image-form-lower", id: "post-images" %>
+            <span class="attach-label">※最大３枚(１枚目が一覧に表示されます)</span>
+            <%= f.file_field :images, class: "image-form-lower", id: "post-images" , name: "post[images][]"%>
           </div>
           <div class="image-form-right", id="preview">
             <span class="preview-image", id="no-preview"><i>No image…</i></span>
@@ -105,6 +106,7 @@
 
       <% end %>
 
+      <%# CSSは assets/stylesheets/posts/index.scss に記載 %>
       <div class="post-actions">
         <%= link_to root_path do %>
           <button class="back-btn">戻る <i class="fas fa-undo-alt"></i></button>
