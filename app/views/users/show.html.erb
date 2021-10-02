@@ -138,6 +138,7 @@
         
       <%= paginate @posts, :window => 2 %>
 
+      <%# CSSは assets/stylesheets/posts/index.scss に記載 %>
       <%= link_to root_path do %>
         <button class="back-btn">トップに戻る <i class="fas fa-undo-alt"></i></button>
       <% end %>
