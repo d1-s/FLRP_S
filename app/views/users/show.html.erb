@@ -22,18 +22,18 @@
             </div>
           </div>
 
-          <%= search_form_for @q, url: user_path, class: "my-search-form" do |f| %>
+          <%= search_form_for @q, url: user_path, id: "my-search-form" do |f| %>
             <div class="search-nav">
               <div  class="search-nav-top">
                 <h4 class="search-nav-name"><i class="fas fa-search"></i> マイページ内 絞り込み</h4>
 
                 <%# フォーム内容をリセットするボタンを実装したい %>
                 <%#= link_to user_profile_path(current_user) do %>
-                  <%# <button class="search-reset-btn">リセット %>
-                    <%# <span class="reset-mark"><i class="fas fa-redo-alt"></i></span> %>
-                  <%# </button> %>
+                  <button class="search-reset-btn", id="reset-btn">リセット
+                    <span class="reset-mark"><i class="fas fa-redo-alt"></i></span>
+                  </button>
                 <%# end %>
-                <%# //フォーム内容をリセットするボタンを実装したい %>
+                <%# /フォーム内容をリセットするボタンを実装したい %>
 
               </div>
 
@@ -42,38 +42,38 @@
                   <%= f.label "来店日", class: "search-label" %>
                 </div>
                 <div class="select-box">
-                  <%= f.date_field :visit_gteq, include_blank: true, class:"search-select-3" %> 〜
-                  <%= f.date_field :visit_lteq, include_blank: true, class:"search-select-3" %>
+                  <%= f.date_field :visit_gteq, include_blank: true, class:"search-select-3", id: "search-input" %> 〜
+                  <%= f.date_field :visit_lteq, include_blank: true, class:"search-select-3", id: "search-input" %>
                 </div>
                 <div class="search-content">
                   <%= f.label "シチュエーション", class: "search-label" %>
                 </div>
                 <div class="select-box">
-                  <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1"}) %>
+                  <%= f.collection_select(:category_id_eq, Category.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1", id:"search-select"}) %>
                 </div>
                 <div class="search-content">
                   <%= f.label "都道府県", class: "search-label" %>
                 </div>
                 <div class="select-box">
-                  <%= f.collection_select(:prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1"}) %>
+                  <%= f.collection_select(:prefecture_id_eq, Prefecture.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1", id:"search-select"}) %>
                 </div>
                 <div class="search-content">
                   <%= f.label "個室／貸切", class: "search-label" %>
                 </div>
                 <div class="select-box">
-                  <%= f.collection_select(:compartment_id_eq, Compartment.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-2"}) %>
-                  <%= f.collection_select(:reserved_id_eq, Reserved.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-2"}) %>
+                  <%= f.collection_select(:compartment_id_eq, Compartment.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-2", id:"search-select"}) %>
+                  <%= f.collection_select(:reserved_id_eq, Reserved.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-2", id:"search-select"}) %>
                 </div>
                 <div class="search-content">
                   <%= f.label "予算", class: "search-label" %>
                 </div>
                 <div class="select-box">
-                  <%= f.collection_select(:budget_id_eq, Budget.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1"}) %>
+                  <%= f.collection_select(:budget_id_eq, Budget.all, :id, :name, {include_blank: '指定なし'}, {class:"search-select-1", id:"search-select"}) %>
                 </div>
               </div>
 
               <div class="search-act">
-                <%= f.submit "検索", class: "search-btn" %>
+                <%= f.submit "検索", class: "search-btn", id: "search-btn" %>
               </div>
             </div>
           <% end %>
@@ -86,7 +86,7 @@
 
         </div>
       </div>
-      <%# //CSSは app/assets/stylesheets/shared/side_bar.cssに記載 %>
+      <%# /CSSは app/assets/stylesheets/shared/side_bar.cssに記載 %>
 
     <% else %>
       <div class="side-bar">
@@ -144,7 +144,7 @@
     </div>
 
   </div>
-  <%# //user-show-メイン %>
+  <%# /user-show-メイン %>
 
   <%= render "shared/footer" %>
 </div>
