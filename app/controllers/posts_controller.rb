@@ -60,5 +60,4 @@ class PostsController < ApplicationController
   def search_post
     @q = Post.ransack(params[:q])
   end
-
 end
