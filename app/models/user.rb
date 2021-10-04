@@ -16,6 +16,6 @@ class User < ApplicationRecord
     validates :gender, presence: { message: 'を選択してください' }
     validates :password, confirmation: true, on: :create,
               format: { with: VALID_PASSWORD, message: 'は半角英数字それぞれ１文字以上含む６文字以上が必要です' }
-    validates :password_confirmation
+    validates :password_confirmation, on: :create
   end
 end
