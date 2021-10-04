@@ -18,7 +18,9 @@ ja:
 
   activerecord:
     models:
+      user: アカウント
       post: 投稿
+      comment: コメント
     attributes:
       post:
         visit: 来店日
@@ -34,4 +36,5 @@ ja:
         buiding: 建物名
         budget_id: 予算
         introduction: おすすめポイント／感想
-        image: 画像
+        images: 画像
+        user: アカウント
