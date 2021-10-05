@@ -231,7 +231,6 @@ RSpec.describe '投稿を編集', type: :system do
       expect(page).to have_selector('img')
     end
   end
-
   context '投稿の編集ができないとき' do
     it 'ログインしたユーザーは自分以外のユーザーの投稿編集ページへは遷移できない' do
       #「post1」を投稿したユーザーでログインする
@@ -257,6 +256,66 @@ RSpec.describe '投稿を編集', type: :system do
       expect(current_path).to eq post_path(@post2)
       #「編集」へのリンクがないことを確認する
       expect(page).to have_no_link '編集', href: edit_post_path(@post2)
+    end
+  end
+end
+
+RSpec.describe '投稿を削除', type: :system do
+  before do
+    @post1 = FactoryBot.create(:post)
+    @post2 = FactoryBot.create(:post)
+  end
+
+  context '投稿を削除できるとき' do
+    it 'ログインしたユーザーは自分の投稿を削除できる' do
+      #「post1」を投稿したユーザーでログインする
+      sign_in(@post1.user)
+      #自分が投稿した投稿をクリックすると詳細ページに移動することを確認する
+      all('.post-list-wrapper')[1].click
+      expect(current_path).to eq post_path(@post1)
+      #詳細ページに「削除」へのリンクがあることを確認する
+      expect(page).to have_link '削除', href: post_path(@post1)
+      #投稿を削除するとPostモデルのレコードが１減ることを確認する
+      find('.delete-btn').click
+      expect{
+        expect(page.accept_confirm).to eq "【確認】この投稿を削除しますか？"
+        sleep 0.5
+      }.to change{ Post.count }.by(-1)
+      #トップページに遷移していることを確認する
+      expect(current_path).to eq root_path
+      #トップページに「post1」の内容が存在しないことを確認する
+      expect(page).to have_no_content(@post1.restaurant)
+      expect(page).to have_no_content(@post1.city)
+      expect(page).to have_no_content(@post1.address)
+      expect(page).to have_no_content(@post1.buiding)
+      # ↑ランダムで入力されているもののみ抜粋
+    end
+  end
+  context '投稿を削除できないとき' do
+    it 'ログインしたユーザーでも自分以外が投稿したものは削除できない' do
+      #「post1」を投稿したユーザーでログインする
+      sign_in(@post1.user)
+      #「post2」の投稿をクリックすると詳細ページに移動することを確認する
+      all('.post-list-wrapper')[0].click
+      expect(current_path).to eq post_path(@post2)
+      #詳細ページに「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link '削除', href: post_path(@post2)
+    end
+    it 'ログインしていなければ投稿の削除ボタンがない' do
+      #トップページに移動する
+      visit root_path
+      #「post1」の投稿をクリックすると詳細ページに移動することを確認する
+      all('.post-list-wrapper')[1].click
+      expect(current_path).to eq post_path(@post1)
+      #詳細ページに「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link '削除', href: post_path(@post1)
+      #トップページに移動する
+      visit root_path
+      #「post2」の投稿をクリックすると詳細ページに移動することを確認する
+      all('.post-list-wrapper')[0].click
+      expect(current_path).to eq post_path(@post2)
+      #詳細ページに「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link '削除', href: post_path(@post2)
     end
   end
 end
