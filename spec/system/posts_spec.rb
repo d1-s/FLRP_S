@@ -16,7 +16,7 @@ RSpec.describe '投稿する', type: :system do
       visit new_post_path
       #正しい投稿内容を入力する
       fill_in 'post_restaurant', with: @post.restaurant
-      fill_in 'post_visit', with: '002021-10-04'
+      fill_in 'post_visit', with: @post.visit
       select 'カップルにおすすめ', from: 'post_category_id'
       select '個室なし', from: 'post_compartment_id'
       select '貸切 不可', from: 'post_reserved_id'
@@ -85,5 +85,60 @@ RSpec.describe '投稿する', type: :system do
       #トップページに新規投稿ボタンが存在しないことを確認する
       expect(page).to have_no_content('新規投稿')
     end
+  end
+end
+
+RSpec.describe '投稿詳細', type: :system do
+  before do
+    @post = FactoryBot.create(:post)
+  end
+
+  it 'ログインしたユーザーは投稿詳細ページに遷移してコメントができるフォームが表示される' do
+    #ログインする
+    sign_in(@post.user)
+    #投稿をクリックすると詳細ページ遷移することを確認する
+    find('.post-list-wrapper').click
+    expect(current_path).to eq post_path(@post)
+    #詳細ページに投稿内容が表示されていることを確認する
+    expect(page).to have_content(@post.restaurant)
+    expect(page).to have_content('2021年10月04日(月)')
+    expect(page).to have_content('カップルにおすすめ')
+    expect(page).to have_content('個室なし')
+    expect(page).to have_content('貸切 不可')
+    expect(page).to have_content('東京都')
+    expect(page).to have_content(@post.city)
+    expect(page).to have_content(@post.address)
+    expect(page).to have_content(@post.buiding)
+    expect(page).to have_content('10:00')
+    expect(page).to have_content('19:00')
+    expect(page).to have_content('1,000円 ~ 3,000円')
+    expect(page).to have_selector('img')
+    #詳細ページにコメントができるフォームがあることを確認する
+    expect(page).to have_selector '.comment-form'
+  end
+  it 'ログインしていないユーザーは投稿詳細ページに遷移はできるが、コメントができるフォームは表示されない' do
+    #トップページに移動する
+    visit root_path
+    #投稿をクリックすると詳細ページ遷移することを確認する
+    find('.post-list-wrapper').click
+    expect(current_path).to eq post_path(@post)
+    #詳細ページに投稿内容が表示されていることを確認する
+    expect(page).to have_content(@post.restaurant)
+    expect(page).to have_content('2021年10月04日(月)')
+    expect(page).to have_content('カップルにおすすめ')
+    expect(page).to have_content('個室なし')
+    expect(page).to have_content('貸切 不可')
+    expect(page).to have_content('東京都')
+    expect(page).to have_content(@post.city)
+    expect(page).to have_content(@post.address)
+    expect(page).to have_content(@post.buiding)
+    expect(page).to have_content('10:00')
+    expect(page).to have_content('19:00')
+    expect(page).to have_content('1,000円 ~ 3,000円')
+    expect(page).to have_selector('img')
+    #詳細ページにコメントができるフォームがないことを確認する
+    expect(page).to have_no_selector '.comment-form'
+    #「コメント機能の利用はログインが必要です」が表示されていることを確認する
+    expect(page).to have_content 'コメント機能の利用はログインが必要です'
   end
 end
