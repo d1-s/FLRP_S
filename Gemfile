@@ -72,3 +72,4 @@ gem 'bootstrap', '~> 4.1.1'
 gem 'jquery-rails'
 gem 'data-confirm-modal'
 gem 'rails-i18n'
+gem "aws-sdk-s3", require: false
