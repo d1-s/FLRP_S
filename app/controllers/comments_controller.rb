@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
       @post = @comment.post
       @comments = @post.comments
       @q = Post.ransack(params[:q])
-      render "posts/show"
+      render 'posts/show'
     end
   end
 
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
       comment.destroy
       redirect_to post_path(comment.post.id)
     else
-      render "posts/show"
+      render 'posts/show'
     end
   end
 

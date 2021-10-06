@@ -39,42 +39,42 @@ RSpec.describe Post, type: :model do
       it 'openが空では登録できない' do
         @post.open = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("開店時間を入力してください")
+        expect(@post.errors.full_messages).to include('開店時間を入力してください')
       end
       it 'closeが空では登録できない' do
         @post.close = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("閉店時間を入力してください")
+        expect(@post.errors.full_messages).to include('閉店時間を入力してください')
       end
       it 'prefecture_idを選択しないと登録できない' do
         @post.prefecture_id = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("都道府県を選択してください")
+        expect(@post.errors.full_messages).to include('都道府県を選択してください')
       end
       it 'cityが空では登録できない' do
         @post.city = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("市町村を入力してください")
+        expect(@post.errors.full_messages).to include('市町村を入力してください')
       end
       it 'addressが空では登録できない' do
         @post.address = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("番地を入力してください")
+        expect(@post.errors.full_messages).to include('番地を入力してください')
       end
       it 'budget_idを選択しないと登録できない' do
         @post.budget_id = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("予算を選択してください")
+        expect(@post.errors.full_messages).to include('予算を選択してください')
       end
       it 'imagesが選択されていないと登録できない' do
         @post.images = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("画像を添付してください")
+        expect(@post.errors.full_messages).to include('画像を添付してください')
       end
       it 'userと紐づいていないと登録できない' do
         @post.user = nil
         @post.valid?
-        expect(@post.errors.full_messages).to include("アカウントを入力してください")
+        expect(@post.errors.full_messages).to include('アカウントを入力してください')
       end
     end
   end

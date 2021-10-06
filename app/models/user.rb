@@ -15,7 +15,7 @@ class User < ApplicationRecord
     validates :email, uniqueness: true, uniqueness: { case_sensitive: true, message: 'はすでに登録されています' }
     validates :gender, presence: { message: 'を選択してください' }
     validates :password, confirmation: true, on: :create,
-              format: { with: VALID_PASSWORD, message: 'は半角英数字それぞれ１文字以上含む６文字以上が必要です' }
+                         format: { with: VALID_PASSWORD, message: 'は半角英数字それぞれ１文字以上含む６文字以上が必要です' }
     validates :password_confirmation, on: :create
   end
 end
