@@ -51,7 +51,9 @@
     - 投稿一覧
     - 絞り込み検索機能
     - ページネーション機能  
-    ![Image from Gyazo](https://i.gyazo.com/fc744a6140dcacad28e570e95e79054e.gif)  
+    <img src="https://i.gyazo.com/fc744a6140dcacad28e570e95e79054e.gif" width="400">
+
+    [![Image from Gyazo](https://i.gyazo.com/fc744a6140dcacad28e570e95e79054e.gif)](https://gyazo.com/fc744a6140dcacad28e570e95e79054e)  
 
 1. 詳細ページ
     - 投稿詳細表示
