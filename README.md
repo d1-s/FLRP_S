@@ -51,19 +51,17 @@
     - 投稿一覧
     - 絞り込み検索機能
     - ページネーション機能  
-    <img src="https://i.gyazo.com/fc744a6140dcacad28e570e95e79054e.gif" width="400">
-
-    [![Image from Gyazo](https://i.gyazo.com/fc744a6140dcacad28e570e95e79054e.gif)](https://gyazo.com/fc744a6140dcacad28e570e95e79054e)  
+    <img src="https://i.gyazo.com/fc744a6140dcacad28e570e95e79054e.gif" width="400">  
 
 1. 詳細ページ
     - 投稿詳細表示
     - コメント一覧  
-    [![Image from Gyazo](https://i.gyazo.com/72dfd8ba919535e7f6b3d5276ed36f02.gif)](https://gyazo.com/72dfd8ba919535e7f6b3d5276ed36f02)  
+    <img src="https://i.gyazo.com/72dfd8ba919535e7f6b3d5276ed36f02.gif" width="400">  
 
     - 投稿編集機能（要ログイン）
     - 投稿削除機能（要ログイン）
     - コメント機能（要ログイン）  
-    [![Image from Gyazo](https://i.gyazo.com/49ce79bedf240135b18851fd8fe94eed.gif)](https://gyazo.com/49ce79bedf240135b18851fd8fe94eed)  
+    <img src="https://i.gyazo.com/49ce79bedf240135b18851fd8fe94eed.gif" width="400">  
 
 1. ユーザー管理機能
     - 新規登録
@@ -75,13 +73,13 @@
     - 投稿機能
     - 画像プレビュー表示
     - 画像複数枚投稿  
-    [![Image from Gyazo](https://i.gyazo.com/9b2fbf0bedde0803706e99cff2e6acd1.gif)](https://gyazo.com/9b2fbf0bedde0803706e99cff2e6acd1)  
+    <img src="https://i.gyazo.com/9b2fbf0bedde0803706e99cff2e6acd1.gif" width="400">
 
 1. マイページ（要ログイン）
     - プロフィール表示
     - 該当ユーザーの投稿一覧
     - マイページ内絞り込み検索（ログインユーザー本人のみ）  
-    [![Image from Gyazo](https://i.gyazo.com/34affcbccff7840f1abb92b0d72d0086.gif)](https://gyazo.com/34affcbccff7840f1abb92b0d72d0086)  
+    <img src="https://i.gyazo.com/34affcbccff7840f1abb92b0d72d0086.gif" width="400">
 
 # **制作背景**
 
