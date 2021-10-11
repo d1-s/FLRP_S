@@ -52,8 +52,8 @@
   - 絞り込み検索機能
   - ページネーション機能  
   <p align="center">
-    <a href="https://gyazo.com/ff66136e6688f2cff0e71e28c5660910"><img src="https://i.gyazo.com/ff66136e6688f2cff0e71e28c5660910.jpg" alt="Image from Gyazo" width="600"/></a> &emsp;&emsp;
-    <a href="https://gyazo.com/d2971f46737c87decf92411cec8820ca"><img src="https://i.gyazo.com/d2971f46737c87decf92411cec8820ca.jpg" alt="Image from Gyazo" width="600"/></a>
+    <a href="https://gyazo.com/ff66136e6688f2cff0e71e28c5660910"><img src="https://i.gyazo.com/ff66136e6688f2cff0e71e28c5660910.jpg" alt="Image from Gyazo" width="500"/></a> &emsp;&emsp;
+    <a href="https://gyazo.com/d2971f46737c87decf92411cec8820ca"><img src="https://i.gyazo.com/d2971f46737c87decf92411cec8820ca.jpg" alt="Image from Gyazo" width="500"/></a>
   </p>
 
 ### **2. 詳細ページ**
@@ -63,8 +63,8 @@
   - 投稿削除機能（要ログイン）
   - コメント機能（要ログイン）  
   <p align="center">
-    <a href="https://gyazo.com/57e6475d7394d507f730ad78eaea9c6e"><img src="https://i.gyazo.com/57e6475d7394d507f730ad78eaea9c6e.jpg" alt="Image from Gyazo" width="600"/></a> &emsp;&emsp;
-    <a href="https://gyazo.com/fdc65a18c9f09f22431b3da5fee02a5c"><img src="https://i.gyazo.com/fdc65a18c9f09f22431b3da5fee02a5c.jpg" alt="Image from Gyazo" width="600"/></a>
+    <a href="https://gyazo.com/57e6475d7394d507f730ad78eaea9c6e"><img src="https://i.gyazo.com/57e6475d7394d507f730ad78eaea9c6e.jpg" alt="Image from Gyazo" width="500"/></a> &emsp;&emsp;
+    <a href="https://gyazo.com/fdc65a18c9f09f22431b3da5fee02a5c"><img src="https://i.gyazo.com/fdc65a18c9f09f22431b3da5fee02a5c.jpg" alt="Image from Gyazo" width="500"/></a>
   </p>
 
 ### **3. ユーザー管理機能**
@@ -72,9 +72,9 @@
   - ログイン
   - ログアウト  
   <p align="center">
-    <a href="https://gyazo.com/4fa89e810a2aac11c54c9e9af0dbcdf8"><img src="https://i.gyazo.com/4fa89e810a2aac11c54c9e9af0dbcdf8.jpg" alt="Image from Gyazo" width="215"/></a> &emsp;&emsp;
-    <a href="https://gyazo.com/653c4d0431cccd72be66a8fc1eec9cb1"><img src="https://i.gyazo.com/653c4d0431cccd72be66a8fc1eec9cb1.jpg" alt="Image from Gyazo" width="500"/></a> &emsp;&emsp;
-    <a href="https://gyazo.com/454681ea6aa2160c5437ff1c01452b77"><img src="https://i.gyazo.com/454681ea6aa2160c5437ff1c01452b77.jpg" alt="Image from Gyazo" width="200"/></a>
+    <a href="https://gyazo.com/4fa89e810a2aac11c54c9e9af0dbcdf8"><img src="https://i.gyazo.com/4fa89e810a2aac11c54c9e9af0dbcdf8.jpg" alt="Image from Gyazo" width="195"/></a> &emsp;
+    <a href="https://gyazo.com/653c4d0431cccd72be66a8fc1eec9cb1"><img src="https://i.gyazo.com/653c4d0431cccd72be66a8fc1eec9cb1.jpg" alt="Image from Gyazo" width="450"/></a> &emsp;
+    <a href="https://gyazo.com/454681ea6aa2160c5437ff1c01452b77"><img src="https://i.gyazo.com/454681ea6aa2160c5437ff1c01452b77.jpg" alt="Image from Gyazo" width="177"/></a>
   </p>
 
 ### **4. 新規投稿ページ**
@@ -82,8 +82,8 @@
   - 画像プレビュー表示
   - 画像複数枚投稿  
   <p align="center">
-    <a href="https://gyazo.com/67a4b9fdd075fe76a5c2b828284aa267"><img src="https://i.gyazo.com/67a4b9fdd075fe76a5c2b828284aa267.jpg" alt="Image from Gyazo" width="600"/></a> &emsp;&emsp;
-    <a href="https://gyazo.com/0f8aa04342f193ac9e91ed91090b620b"><img src="https://i.gyazo.com/0f8aa04342f193ac9e91ed91090b620b.jpg" alt="Image from Gyazo" width="600"/></a>
+    <a href="https://gyazo.com/67a4b9fdd075fe76a5c2b828284aa267"><img src="https://i.gyazo.com/67a4b9fdd075fe76a5c2b828284aa267.jpg" alt="Image from Gyazo" width="500"/></a> &emsp;&emsp;
+    <a href="https://gyazo.com/0f8aa04342f193ac9e91ed91090b620b"><img src="https://i.gyazo.com/0f8aa04342f193ac9e91ed91090b620b.jpg" alt="Image from Gyazo" width="500"/></a>
   </p>
 
 ### **5. マイページ（要ログイン）**
@@ -91,8 +91,8 @@
   - 該当ユーザーの投稿一覧
   - マイページ内絞り込み検索（ログインユーザー本人のみ）  
   <p align="center">
-    <a href="https://gyazo.com/3770fe2fc2b4bcc7c2d828b050150fb4"><img src="https://i.gyazo.com/3770fe2fc2b4bcc7c2d828b050150fb4.jpg" alt="Image from Gyazo" width="1401"/></a> &emsp;&emsp;
-    <a href="https://gyazo.com/05a4c2488d6c78f2ce63500eb6094171"><img src="https://i.gyazo.com/05a4c2488d6c78f2ce63500eb6094171.jpg" alt="Image from Gyazo" width="1388"/></a>
+    <a href="https://gyazo.com/3770fe2fc2b4bcc7c2d828b050150fb4"><img src="https://i.gyazo.com/3770fe2fc2b4bcc7c2d828b050150fb4.jpg" alt="Image from Gyazo" width="500"/></a> &emsp;&emsp;
+    <a href="https://gyazo.com/05a4c2488d6c78f2ce63500eb6094171"><img src="https://i.gyazo.com/05a4c2488d6c78f2ce63500eb6094171.jpg" alt="Image from Gyazo" width="500"/></a>
   </p>
 
 # **制作背景**
