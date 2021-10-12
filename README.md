@@ -19,7 +19,7 @@
 ### インフラ
 &emsp; AWS(EC2, S3) , Capistrano
 ### WEBサーバー（本番環境）
-&emsp; nginX
+&emsp; Nginx
 ### アプリケーションサーバー（本番環境）
 &emsp; unicorn
 ### ソース管理
