@@ -1,13 +1,15 @@
-document.addEventListener('DOMContentLoaded', function(){
-  if (document.getElementById('my-search-form')){
-    const submit = document.getElementById('reset-btn');
-    submit.addEventListener('click', () => {
-      // e.preventDefault();
+$(function(){
+  $(".search-reset-btn").on("click", function(){
+    clearForm(this.form);
+    $(".search-btn").click();
+  });
 
-      document.getElementById('search-input').removeAttribute('name')
-      document.getElementById('search-select').setAttribute('value', "")
-
-      document.getElementById('my-search-form').submit();
-    });
+  function clearForm (form){
+    $(form)
+      .find("input, select")
+      .not(":button, :submit")
+      .val("")
+      .prop("selected", false)
+    ;
   };
 });
