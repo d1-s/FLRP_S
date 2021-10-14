@@ -84,14 +84,18 @@
         <div class="p-form-group">
           <div class="image-form-left", id="image-attached">
             <div class="image-form-upper">
-              <%= f.label "■ 画像（外観／料理）", class: "p-label" %>
+              <%= f.label :images, "■ 画像（外観／料理）", for: 'post-images0', class: "p-label" %>
               <span class="mark">必須</span>
             </div>
             <span class="attach-label">※最大３枚(１枚目が一覧に表示されます)</span>
-            <%= f.file_field :images, class: "image-form-lower", id: "post-images" , name: "post[images][]"%>
+            <div id="input-btn">
+              <%= f.file_field :images, class: "image-form-lower", id: "post-images0" , name: "post[images][]"%>
+            </div>
           </div>
-          <div class="image-form-right", id="preview">
-            <span class="preview-image", id="no-preview"><i>No image…</i></span>
+          <div class="image-form-right">
+            <ul id="preview">
+              <span class="preview-image", id="no-preview"><i>No image…</i></span>
+            </ul>
           </div>
         </div>
 
