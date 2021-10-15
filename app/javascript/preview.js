@@ -14,22 +14,19 @@ $(function(){
       reader.onload = (function(file){
         return function(e){
           let imageLength = $('#preview').children('li').length;                 // 表示されているプレビューの数を数える
-          let labelLength = $("#image-attached>label").eq(-1).data('label-id');  // labelの中から最後の要素のカスタムデータidを取得
+          let labelLength = $("#image-input>label").eq(-1).data('label-id');  // labelの中から最後の要素のカスタムデータidを取得
 
           // プレビュー表示
-          $('#preview').append(`<li class="preview-image-list" id="upload-image${labelLength}" data-image-id="${labelLength}">
-                                  <figure class="preview-image-figure">
-                                    <img src='${e.target.result}' class='preview-image' title='${file.name}' >
-                                  </figure>
-                                  <div class="preview-image-button">
-                                    <a class="preview-image-button-delete" data-image-id="${labelLength}">削除</a>
-                                  </div>
+          $('#preview').append(`<li class="preview-image-list" id="preview-image${labelLength}" data-image-id="${labelLength}">
+                                  <img src='${e.target.result}' class='preview-image' title='${file.name}' >
                                 </li>`);
           $('#no-preview').remove();
 
           // 最大3枚まで投稿可能とする
           if (imageLength < 2) {
-            $("#input-btn").append(`<input class="image-form-lower" id="post-images${labelLength+1}" type="file" name="post[images][]">`);
+            $("#image-input").append(`<label for="post-images${labelLength+1}" class="images-label" data-label-id="${labelLength+1}">
+                                        <input class="post-images" id="post-images${labelLength+1}" type="file" name="post[images][]">
+                                      </label>`);
           };
         };
       })(file);
