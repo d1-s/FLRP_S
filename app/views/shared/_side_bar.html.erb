@@ -38,9 +38,13 @@
       <div class="search-nav">
         <div class="search-nav-top">
           <h4 class="search-nav-name"><i class="fas fa-search"></i> 絞り込み</h4>
-          <button type="button" class="reset-btn">リセット
-            <span class="reset-mark"><i class="fas fa-redo-alt"></i></span>
-          </button>
+          <% if controller.controller_name == 'posts' && controller.action_name == 'index' %>
+            <button type="button" class="reset-btn">リセット
+              <span class="reset-mark"><i class="fas fa-redo-alt"></i></span>
+            </button>
+          <% else %>
+            <span>（※トップページに戻ります）</span>
+          <% end %>
         </div>
         <div class="search-nav-main">
           <div class="search-content">
